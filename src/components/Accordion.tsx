@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -6,30 +6,38 @@ function Accordion({
   title,
   children,
   isExternalOpen,
-  maxHeight = "300px",
 }: {
   title: string;
   children?: React.ReactNode;
   isExternalOpen?: boolean;
-  maxHeight?: string;
 }) {
+  const contentContainerRef = useRef<HTMLDivElement>(null);
+  const maxHeightRef = useRef<number>(0);
   const [isOpen, setIsOpen] = useState(isExternalOpen);
+
+  const tl = gsap.timeline();
+
+  useLayoutEffect(() => {
+    if (contentContainerRef?.current) {
+      maxHeightRef.current = contentContainerRef?.current?.offsetHeight;
+    }
+  }, []);
 
   useEffect(() => {
     setIsOpen(isExternalOpen);
   }, [isExternalOpen]);
 
   useGSAP(() => {
-    gsap.set(".accordion-content", { maxHeight: isOpen ? maxHeight : "0" });
+    gsap.set(".accordion-content", {
+      maxHeight: isOpen ? maxHeightRef.current : "0",
+    });
     gsap.set(".animated-element", { opacity: 0 });
   }, []);
-
-  const tl = gsap.timeline();
 
   useGSAP(() => {
     if (isOpen) {
       tl.to(`.accordion-content`, {
-        maxHeight,
+        maxHeight: maxHeightRef.current,
         duration: 0.2,
       }).to(".animated-element", {
         opacity: 1,
@@ -41,7 +49,7 @@ function Accordion({
       tl.to(".animated-element", {
         opacity: 0,
         duration: 0.1,
-        ease: "power3.out",
+        ease: "power3.in",
       }).to(
         `.accordion-content`,
         {
@@ -51,7 +59,7 @@ function Accordion({
         "+=0.1"
       );
     }
-  }, [isOpen, maxHeight]);
+  }, [isOpen, maxHeightRef.current]);
 
   return (
     <div className="flex flex-col rounded-lg bg-blue-500 p-4">
@@ -75,6 +83,7 @@ function Accordion({
       </div>
       <div
         className={`accordion-content overflow-hidden text-left text-[13px]`}
+        ref={contentContainerRef}
       >
         <div className="h-8">{/* spacer */}</div>
         <div className="accordion-body">{children}</div>

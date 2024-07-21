@@ -4,7 +4,7 @@ import Accordion from "./components/Accordion";
 function App() {
   return (
     <>
-      <Accordion title="Lorem Ipsum" maxHeight="400px">
+      <Accordion title="Lorem Ipsum">
         <h3 className="animated-element fade-in-1 font-bold">Subtitle</h3>
         <p className="animated-element fade-in-2">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam quae
