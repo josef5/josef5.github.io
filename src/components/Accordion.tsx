@@ -83,7 +83,7 @@ function Accordion({
 
   return (
     <div
-      className={`relative flex flex-col rounded-2xl bg-[hsl(0,0%,85%)] pr-6 ${isOpen ? "pl-8 pt-8" : "pl-8 pt-4"} pb-4 text-black shadow-md shadow-black/30 transition-all duration-1000`}
+      className={`relative flex flex-col rounded-2xl bg-[hsl(0,0%,85%)] px-8 pb-4 text-black shadow-md shadow-black/30 transition-all duration-1000 ${isOpen ? "pt-8" : "pt-4"} `}
     >
       <div
         className="accordion-header flex cursor-pointer items-baseline gap-2"
