@@ -43,25 +43,41 @@ function Accordion({
       tl.to(`.accordion-content`, {
         maxHeight: maxHeightRef.current,
         duration: 0.2,
-      }).to(".animated-element", {
-        opacity: 1,
-        duration: 0.2,
-        ease: "power3.in",
-        stagger: 0.1,
-      });
+      })
+        .to(".subtitle-1", {
+          opacity: 0,
+          duration: 0.2,
+          ease: "power3.out",
+        })
+        .to(
+          ".animated-element",
+          {
+            opacity: 1,
+            duration: 0.2,
+            ease: "power3.in",
+            stagger: 0.1,
+          },
+          "<",
+        );
     } else {
       tl.to(".animated-element", {
         opacity: 0,
         duration: 0.3,
         ease: "power3.out",
-      }).to(
-        `.accordion-content`,
-        {
-          maxHeight: "0",
-          duration: 0.2,
-        },
-        "+=0.1",
-      );
+      })
+        .to(".subtitle-1", {
+          opacity: 1,
+          duration: 0.3,
+          ease: "power3.in",
+        })
+        .to(
+          `.accordion-content`,
+          {
+            maxHeight: "0",
+            duration: 0.2,
+          },
+          "+=0.1",
+        );
     }
   }, [isOpen, maxHeightRef.current]);
 
@@ -74,9 +90,7 @@ function Accordion({
         onClick={() => setIsOpen((prev) => !prev)}
       >
         <h2 className="text-base font-extrabold text-gray-600">{title}</h2>
-        <h3
-          className={`text-xs font-normal text-gray-600 transition-opacity duration-200 ${isOpen ? "opacity-0" : "opacity-100"}`}
-        >
+        <h3 className={`subtitle-1 text-xs font-normal text-gray-600`}>
           {subtitle}
         </h3>
         <CloseIcon
@@ -87,7 +101,7 @@ function Accordion({
         className={`accordion-content overflow-hidden text-left text-[12px] leading-5`}
         ref={contentContainerRef}
       >
-        <div className="animated-element mt-[-0.25rem] h-14 text-gray-600">
+        <div className="subtitle-2 animated-element mt-[-0.25rem] h-14 text-gray-600">
           {subtitle}
         </div>
         <div className="accordion-body">{children}</div>
