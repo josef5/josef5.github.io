@@ -1,6 +1,7 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import CloseIcon from "./CloseIcon";
 
 function Accordion({
   title,
@@ -46,47 +47,44 @@ function Accordion({
         opacity: 1,
         duration: 0.2,
         ease: "power3.in",
-        stagger: 0.2,
+        stagger: 0.1,
       });
     } else {
       tl.to(".animated-element", {
         opacity: 0,
-        duration: 0.1,
-        ease: "power3.in",
+        duration: 0.3,
+        ease: "power3.out",
       }).to(
         `.accordion-content`,
         {
           maxHeight: "0",
           duration: 0.2,
         },
-        "+=0.1"
+        "+=0.1",
       );
     }
   }, [isOpen, maxHeightRef.current]);
 
   return (
-    <div className="flex flex-col rounded-lg bg-blue-500 p-4">
+    <div
+      className={`relative flex flex-col rounded-2xl bg-[hsl(0,0%,85%)] pr-6 ${isOpen ? "pl-8 pt-8" : "pl-8 pt-4"} pb-4 text-black shadow-md shadow-black/30 transition-all duration-1000`}
+    >
       <div
-        className="accordion-header flex cursor-pointer justify-between"
+        className="accordion-header flex cursor-pointer items-baseline gap-2"
         onClick={() => setIsOpen((prev) => !prev)}
       >
-        <p className="font-bold">{title}</p>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          className={`size-4 transition-all duration-200 ${isOpen ? "opacity-100" : "opacity-0"}`}
+        <h2 className="text-base font-extrabold text-gray-600">{title}</h2>
+        <h3
+          className={`text-xs font-normal text-gray-600 transition-opacity duration-200 ${isOpen ? "opacity-0" : "opacity-100"}`}
         >
-          <path
-            fillRule="evenodd"
-            d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16ZM8.28 7.22a.75.75 0 0 0-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 1 0 1.06 1.06L10 11.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L11.06 10l1.72-1.72a.75.75 0 0 0-1.06-1.06L10 8.94 8.28 7.22Z"
-            clipRule="evenodd"
-          />
-        </svg>
           {subtitle}
+        </h3>
+        <CloseIcon
+          className={`absolute right-5 top-5 size-5 fill-gray-600 transition-opacity duration-200 ${isOpen ? "opacity-100" : "opacity-0"}`}
+        />
       </div>
       <div
-        className={`accordion-content overflow-hidden text-left text-[13px]`}
+        className={`accordion-content overflow-hidden text-left text-[12px] leading-5`}
         ref={contentContainerRef}
       >
         <div className="animated-element mt-[-0.25rem] h-14 text-gray-600">
