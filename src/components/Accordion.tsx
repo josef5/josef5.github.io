@@ -4,10 +4,12 @@ import { useGSAP } from "@gsap/react";
 
 function Accordion({
   title,
+  subtitle,
   children,
   isExternalOpen,
 }: {
   title: string;
+  subtitle?: string;
   children?: React.ReactNode;
   isExternalOpen?: boolean;
 }) {
@@ -31,6 +33,7 @@ function Accordion({
     gsap.set(".accordion-content", {
       maxHeight: isOpen ? maxHeightRef.current : "0",
     });
+
     gsap.set(".animated-element", { opacity: 0 });
   }, []);
 
@@ -80,12 +83,15 @@ function Accordion({
             clipRule="evenodd"
           />
         </svg>
+          {subtitle}
       </div>
       <div
         className={`accordion-content overflow-hidden text-left text-[13px]`}
         ref={contentContainerRef}
       >
-        <div className="h-8">{/* spacer */}</div>
+        <div className="animated-element mt-[-0.25rem] h-14 text-gray-600">
+          {subtitle}
+        </div>
         <div className="accordion-body">{children}</div>
         <div className="h-4">{/* spacer */}</div>
       </div>
