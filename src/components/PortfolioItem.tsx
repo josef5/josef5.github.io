@@ -126,26 +126,14 @@ function PortfolioItem({
             ))}
           </div>
           <div className="screenshots my-12 flex min-h-[212px] gap-6">
-            <img
-              src="/seat-finance-calculator-1-192x212.png"
-              alt="SEAT Finance Calculator"
-              className="animated-element overflow-hidden rounded"
-            />
-            <img
-              src="/seat-testdrive-1-258x212.png"
-              alt="SEAT Request a Test Drive"
-              className="animated-element overflow-hidden rounded"
-            />
-            <img
-              src="/seat-testdrive-2-158x212.png"
-              alt="SEAT Request a Test Drive"
-              className="animated-element overflow-hidden rounded"
-            />
-            <img
-              src="/seat-testdrive-3-150x212.png"
-              alt="SEAT Request a Test Drive"
-              className="animated-element overflow-hidden rounded"
-            />
+            {screenshots.map((src) => (
+              <img
+                src={src}
+                key={src}
+                // alt="SEAT Finance Calculator"
+                className="animated-element shrink-0 overflow-hidden rounded"
+              />
+            ))}
           </div>
           <p className="animated-element w-6/12 leading-snug text-gray-600">
             {description}
