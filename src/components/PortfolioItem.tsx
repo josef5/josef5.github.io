@@ -40,6 +40,10 @@ function PortfolioItem({
 
   useGSAP(
     () => {
+      gsap.set(mainRef.current, {
+        paddingTop: isOpen ? "2rem" : "1rem",
+      });
+
       gsap.set(".accordion-content", {
         maxHeight: isOpen ? maxHeightRef.current : "0",
       });
@@ -56,11 +60,23 @@ function PortfolioItem({
           maxHeight: maxHeightRef.current,
           duration: 0.2,
         })
-          .to(".subtitle-1", {
-            opacity: 0,
-            duration: 0.2,
-            ease: "power3.out",
-          })
+          .to(
+            mainRef.current,
+            {
+              paddingTop: "2rem",
+              duration: 0.2,
+            },
+            "<",
+          )
+          .to(
+            ".subtitle-1",
+            {
+              opacity: 0,
+              duration: 0.1,
+              ease: "power3.out",
+            },
+            "<",
+          )
           .to(
             ".animated-element",
             {
@@ -69,12 +85,12 @@ function PortfolioItem({
               ease: "power3.in",
               stagger: 0.1,
             },
-            "<",
+            "<0.1",
           );
       } else {
         tl.to(".animated-element", {
           opacity: 0,
-          duration: 0.3,
+          duration: 0.2,
           ease: "power3.out",
         })
           .to(".subtitle-1", {
@@ -88,8 +104,12 @@ function PortfolioItem({
               maxHeight: "0",
               duration: 0.2,
             },
-            "+=0.1",
-          );
+            "<0.1",
+          )
+          .to(mainRef.current, {
+            paddingTop: "1rem",
+            duration: 0.2,
+          });
       }
     },
     { dependencies: [isOpen, maxHeightRef.current], scope: mainRef },
@@ -98,7 +118,7 @@ function PortfolioItem({
   return (
     <div
       ref={mainRef}
-      className={`relative flex flex-col rounded-2xl bg-[hsl(0,0%,85%)] px-8 pb-4 text-black shadow-md shadow-black/30 transition-all duration-1000 ${isOpen ? "pt-8" : "pt-4"} `}
+      className={`relative flex flex-col rounded-2xl bg-[hsl(0,0%,85%)] px-8 pb-4 text-black shadow-md shadow-black/30`}
     >
       <div
         className="accordion-header flex cursor-pointer items-baseline gap-2"
