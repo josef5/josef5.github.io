@@ -3,6 +3,31 @@ import Accordion from "./components/Accordion";
 import Tag from "./components/Tag";
 
 function App() {
+  const data = {
+    title: "SEAT Cars UK",
+    subtitle: "Automotive web apps",
+    tags: [
+      "React",
+      "TypeScript",
+      "Hookstate",
+      "Storybook",
+      "Jahia",
+      "Cypress",
+      "Webpack",
+    ],
+    screenshots: [
+      "/seat-finance-calculator-1-192x212.png",
+      "/seat-testdrive-1-258x212.png",
+      "/seat-testdrive-2-158x212.png",
+      "/seat-testdrive-3-150x212.png",
+    ],
+    description:
+      "SEAT Finance Calculator and Request a Test Drive forms were built using React and TypeScript and configured using Jahia CMS.",
+    link: { text: "www.seat.co.uk", url: "http://www.seat.co.uk" },
+  };
+
+  const { title, subtitle /* , tags, screenshots, description, link */ } = data;
+
   return (
     <>
       <Accordion
