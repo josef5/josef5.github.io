@@ -5,11 +5,14 @@ import CloseIcon from "./CloseIcon";
 import Tag from "./Tag";
 
 function PortfolioItem({
+  id,
   title,
   subtitle,
   data,
   isExternalOpen,
+  onOpen,
 }: {
+  id: number;
   title: string;
   subtitle?: string;
   data: {
@@ -19,14 +22,25 @@ function PortfolioItem({
     link: { text: string; url: string };
   };
   isExternalOpen?: boolean;
+  onOpen: (id: number) => void;
 }) {
   const mainRef = useRef<HTMLDivElement>(null);
   const contentContainerRef = useRef<HTMLDivElement>(null);
   const maxHeightRef = useRef<number>(0);
   const [isOpen, setIsOpen] = useState(isExternalOpen);
-  const { /* title, subtitle,  */ tags, screenshots, description, link } = data;
+  const { tags, screenshots, description, link } = data;
 
   const tl = gsap.timeline();
+
+  function handleOpen() {
+    onOpen(id);
+
+    setIsOpen(true);
+  }
+
+  function handleClose() {
+    setIsOpen(false);
+  }
 
   useLayoutEffect(() => {
     if (contentContainerRef?.current) {
@@ -122,7 +136,7 @@ function PortfolioItem({
     >
       <div
         className="accordion-header flex cursor-pointer items-baseline gap-2"
-        onClick={() => setIsOpen((prev) => !prev)}
+        onClick={isOpen ? handleClose : handleOpen}
       >
         <h2 className="text-base font-extrabold text-gray-600">{title}</h2>
         <h3 className={`subtitle-1 text-xs font-normal text-gray-600`}>
@@ -150,7 +164,6 @@ function PortfolioItem({
               <img
                 src={src}
                 key={src}
-                // alt="SEAT Finance Calculator"
                 className="animated-element shrink-0 overflow-hidden rounded"
               />
             ))}

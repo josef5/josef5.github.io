@@ -1,6 +1,6 @@
+import { useState } from "react";
 import "./App.css";
 import PortfolioItem from "./components/PortfolioItem";
-// import PortfolioItem from "./components/PortfolioItem";
 
 function App() {
   const data = {
@@ -26,17 +26,40 @@ function App() {
     link: { text: "www.seat.co.uk", url: "http://www.seat.co.uk" },
   };
 
-  const { title, subtitle /* , tags, screenshots, description, link */ } = data;
+  const { title, subtitle } = data;
+
+  const [itemOpen, setItemOpen] = useState<number | null>(null);
+
+  function handleOpen(id: number) {
+    setItemOpen(id);
+  }
 
   return (
     <div className="flex flex-col gap-4">
       <PortfolioItem
+        id={1}
         title={title}
         subtitle={subtitle}
         data={data}
-        isExternalOpen={true}
+        isExternalOpen={itemOpen === 1}
+        onOpen={handleOpen}
       />
-      <PortfolioItem title={title} subtitle={subtitle} data={data} />
+      <PortfolioItem
+        id={2}
+        title={title}
+        subtitle={subtitle}
+        data={data}
+        isExternalOpen={itemOpen === 2}
+        onOpen={handleOpen}
+      />
+      <PortfolioItem
+        id={3}
+        title={title}
+        subtitle={subtitle}
+        data={data}
+        isExternalOpen={itemOpen === 3}
+        onOpen={handleOpen}
+      />
     </div>
   );
 }
