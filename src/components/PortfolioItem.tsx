@@ -30,7 +30,7 @@ function PortfolioItem({
   const [isOpen, setIsOpen] = useState(isExternalOpen);
   const { tags, screenshots, description, link } = data;
 
-  const tl = gsap.timeline();
+  const tl = useRef<gsap.core.Timeline>();
 
   function handleOpen() {
     onOpen(id);
@@ -63,6 +63,8 @@ function PortfolioItem({
       });
 
       gsap.set(".animated-element", { opacity: 0 });
+
+      tl.current = gsap.timeline();
     },
     { dependencies: [], scope: mainRef },
   );
@@ -70,10 +72,11 @@ function PortfolioItem({
   useGSAP(
     () => {
       if (isOpen) {
-        tl.to(`.accordion-content`, {
-          maxHeight: maxHeightRef.current,
-          duration: 0.2,
-        })
+        tl.current
+          ?.to(`.accordion-content`, {
+            maxHeight: maxHeightRef.current,
+            duration: 0.2,
+          })
           .to(
             mainRef.current,
             {
@@ -102,11 +105,12 @@ function PortfolioItem({
             "<0.1",
           );
       } else {
-        tl.to(".animated-element", {
-          opacity: 0,
-          duration: 0.2,
-          ease: "power3.out",
-        })
+        tl.current
+          ?.to(".animated-element", {
+            opacity: 0,
+            duration: 0.2,
+            ease: "power3.out",
+          })
           .to(".subtitle-1", {
             opacity: 1,
             duration: 0.3,
