@@ -1,6 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CloseIcon from "./CloseIcon";
 import Tag from "./Tag";
 
@@ -26,7 +26,6 @@ function PortfolioItem({
 }) {
   const mainRef = useRef<HTMLDivElement>(null);
   const contentContainerRef = useRef<HTMLDivElement>(null);
-  const maxHeightRef = useRef<number>(0);
   const [isOpen, setIsOpen] = useState(isExternalOpen);
   const { tags, screenshots, description, link } = data;
 
@@ -42,12 +41,6 @@ function PortfolioItem({
     setIsOpen(false);
   }
 
-  useLayoutEffect(() => {
-    if (contentContainerRef?.current) {
-      maxHeightRef.current = contentContainerRef?.current?.offsetHeight;
-    }
-  }, []);
-
   useEffect(() => {
     setIsOpen(isExternalOpen);
   }, [isExternalOpen]);
@@ -59,7 +52,7 @@ function PortfolioItem({
       });
 
       gsap.set(".accordion-content", {
-        maxHeight: isOpen ? maxHeightRef.current : "0",
+        height: isOpen ? "auto" : 0,
       });
 
       gsap.set(".animated-element", { opacity: 0 });
@@ -74,7 +67,7 @@ function PortfolioItem({
       if (isOpen) {
         tl.current
           ?.to(`.accordion-content`, {
-            maxHeight: maxHeightRef.current,
+            height: "auto",
             duration: 0.2,
           })
           .to(
@@ -119,7 +112,7 @@ function PortfolioItem({
           .to(
             `.accordion-content`,
             {
-              maxHeight: "0",
+              height: 0,
               duration: 0.2,
             },
             "<0.1",
@@ -130,7 +123,7 @@ function PortfolioItem({
           });
       }
     },
-    { dependencies: [isOpen, maxHeightRef.current], scope: mainRef },
+    { dependencies: [isOpen], scope: mainRef },
   );
 
   return (
