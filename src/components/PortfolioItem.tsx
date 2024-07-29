@@ -29,16 +29,13 @@ function PortfolioItem({
   const [isOpen, setIsOpen] = useState(isExternalOpen);
   const { tags, screenshots, description, link } = data;
 
-  const tl = useRef<gsap.core.Timeline>();
-
-  function handleOpen() {
-    onOpen(id);
-
-    setIsOpen(true);
-  }
-
-  function handleClose() {
-    setIsOpen(false);
+  function handleClick() {
+    if (isOpen) {
+      setIsOpen(false);
+    } else {
+      onOpen(id);
+      setIsOpen(true);
+    }
   }
 
   useEffect(() => {
@@ -56,8 +53,6 @@ function PortfolioItem({
       });
 
       gsap.set(".animated-element", { opacity: 0 });
-
-      tl.current = gsap.timeline();
     },
     { dependencies: [], scope: mainRef },
   );
@@ -65,8 +60,9 @@ function PortfolioItem({
   useGSAP(
     () => {
       if (isOpen) {
-        tl.current
-          ?.to(`.accordion-content`, {
+        gsap
+          .timeline()
+          .to(`.accordion-content`, {
             height: "auto",
             duration: 0.2,
           })
@@ -98,8 +94,9 @@ function PortfolioItem({
             "<0.1",
           );
       } else {
-        tl.current
-          ?.to(".animated-element", {
+        gsap
+          .timeline()
+          .to(".animated-element", {
             opacity: 0,
             duration: 0.2,
             ease: "power3.out",
@@ -133,7 +130,7 @@ function PortfolioItem({
     >
       <div
         className="accordion-header flex cursor-pointer items-baseline gap-2"
-        onClick={isOpen ? handleClose : handleOpen}
+        onClick={handleClick}
       >
         <h2 className="text-base font-extrabold text-gray-600">{title}</h2>
         <h3 className={`subtitle-1 text-xs font-normal text-gray-600`}>
