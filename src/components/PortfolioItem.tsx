@@ -53,6 +53,8 @@ function PortfolioItem({
       });
 
       gsap.set(".animated-element", { opacity: 0 });
+      gsap.set(".subtitle-1", { opacity: 1 });
+      gsap.set(".close-icon", { opacity: 0 });
     },
     { dependencies: [], scope: mainRef },
   );
@@ -66,6 +68,14 @@ function PortfolioItem({
             height: "auto",
             duration: 0.2,
           })
+          .to(
+            ".close-icon",
+            {
+              opacity: 1,
+              duration: 0.1,
+            },
+            "<",
+          )
           .to(
             mainRef.current,
             {
@@ -114,10 +124,22 @@ function PortfolioItem({
             },
             "<0.1",
           )
-          .to(mainRef.current, {
+          .to(
+            ".close-icon",
+            {
+              opacity: 0,
+              duration: 0.1,
+            },
+            "<",
+          )
+          .to(
+            mainRef.current,
+            {
             paddingTop: "1rem",
             duration: 0.2,
-          });
+            },
+            "<",
+          );
       }
     },
     { dependencies: [isOpen], scope: mainRef },
@@ -137,7 +159,7 @@ function PortfolioItem({
           {subtitle}
         </h3>
         <CloseIcon
-          className={`absolute right-5 top-5 size-5 fill-gray-600 transition-opacity duration-200 ${isOpen ? "opacity-100" : "opacity-0"}`}
+          className={`close-icon absolute right-5 top-5 size-5 fill-gray-600`}
         />
       </div>
       <div
