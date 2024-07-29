@@ -45,11 +45,11 @@ function PortfolioItem({
   useGSAP(
     () => {
       gsap.set(mainRef.current, {
-        paddingTop: isOpen ? "2rem" : "1rem",
+        paddingTop: "1rem",
       });
 
       gsap.set(".accordion-content", {
-        height: isOpen ? "auto" : 0,
+        height: 0,
       });
 
       gsap.set(".animated-element", { opacity: 0 });
@@ -135,8 +135,8 @@ function PortfolioItem({
           .to(
             mainRef.current,
             {
-            paddingTop: "1rem",
-            duration: 0.2,
+              paddingTop: "1rem",
+              duration: 0.2,
             },
             "<",
           );
