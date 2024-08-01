@@ -16,10 +16,13 @@ function App() {
       "Webpack",
     ],
     screenshots: [
-      "/seat-finance-calculator-1-192x212.png",
-      "/seat-testdrive-1-258x212.png",
-      "/seat-testdrive-2-158x212.png",
-      "/seat-testdrive-3-150x212.png",
+      {
+        alt: "SEAT Finance Calculator",
+        src: "/seat-finance-calculator-1-192x212.png",
+      },
+      { alt: "SEAT Test Drive", src: "/seat-testdrive-1-258x212.png" },
+      { alt: "SEAT Test Drive", src: "/seat-testdrive-2-158x212.png" },
+      { alt: "SEAT Test Drive", src: "/seat-testdrive-3-150x212.png" },
     ],
     description:
       "SEAT Finance Calculator and Request a Test Drive forms were built using React and TypeScript and configured using Jahia CMS.",

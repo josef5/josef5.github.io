@@ -17,7 +17,7 @@ function PortfolioItem({
   subtitle?: string;
   data: {
     tags: string[];
-    screenshots: string[];
+    screenshots: { alt: string; src: string }[];
     description: string;
     link: { text: string; url: string };
   };
@@ -176,10 +176,11 @@ function PortfolioItem({
             ))}
           </div>
           <div className="screenshots my-12 flex min-h-[212px] gap-6">
-            {screenshots.map((src) => (
+            {screenshots.map(({ src, alt }) => (
               <img
                 src={src}
                 key={src}
+                alt={alt}
                 className="animated-element shrink-0 overflow-hidden rounded"
               />
             ))}
