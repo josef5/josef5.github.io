@@ -56,6 +56,23 @@ function App() {
         "Skoda Book a Service forms were built using React and TypeScript and configured using Jahia CMS.",
       link: { text: "www.skoda.co.uk", url: "http://www.skoda.co.uk" },
     },
+    {
+      id: "wren",
+      title: "Wren Kitchens",
+      subtitle: "Kitchen showroom page",
+      tags: ["HTML", "CSS", "JavaScript"],
+      screenshots: [
+        { alt: "Wren Kitchens", src: "/wren-levittown-1-202x212.png" },
+        { alt: "Wren Kitchens", src: "/wren-levittown-2-188x212.png" },
+        { alt: "Wren Kitchens", src: "/wren-levittown-3-170x212.png" },
+      ],
+      description:
+        "Wren Kitchens was built using React and TypeScript and configured using Redux and Redux-Saga.",
+      link: {
+        text: "www.wrenkitchens.com",
+        url: "https://www.wrenkitchens.com/us/showrooms/levittown",
+      },
+    },
   ];
 
   const [itemOpen, setItemOpen] = useState<string | null>(null);
