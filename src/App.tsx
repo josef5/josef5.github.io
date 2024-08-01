@@ -12,8 +12,8 @@ function App() {
 
   return (
     <div className="flex flex-col gap-4">
-      {data.map((data) => {
-        const { id, title, subtitle } = data;
+      {data.map((item) => {
+        const { id, title, subtitle, ...rest } = item;
 
         return (
           <PortfolioItem
@@ -21,7 +21,7 @@ function App() {
             key={id}
             title={title}
             subtitle={subtitle}
-            data={data}
+            data={rest}
             isExternalOpen={itemOpen === id}
             onOpen={handleOpen}
           />
