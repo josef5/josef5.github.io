@@ -12,7 +12,7 @@ function PortfolioItem({
   isExternalOpen,
   onOpen,
 }: {
-  id: number;
+  id: string;
   title: string;
   subtitle?: string;
   data: {
@@ -22,7 +22,7 @@ function PortfolioItem({
     link: { text: string; url: string };
   };
   isExternalOpen?: boolean;
-  onOpen: (id: number) => void;
+  onOpen: (id: string) => void;
 }) {
   const mainRef = useRef<HTMLDivElement>(null);
   const contentContainerRef = useRef<HTMLDivElement>(null);

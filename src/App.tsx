@@ -58,9 +58,9 @@ function App() {
     },
   ];
 
-  const [itemOpen, setItemOpen] = useState<number | null>(null);
+  const [itemOpen, setItemOpen] = useState<string | null>(null);
 
-  function handleOpen(id: number) {
+  function handleOpen(id: string) {
     setItemOpen(id);
   }
 
