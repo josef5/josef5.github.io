@@ -5,6 +5,44 @@ import PortfolioItem from "./components/PortfolioItem";
 function App() {
   const data = [
     {
+      id: "vw",
+      title: "Volkswagen UK",
+      subtitle: "Automotive web apps",
+      tags: [
+        "React",
+        "TypeScript",
+        "Redux",
+        "Hookstate",
+        "Styled Components",
+        "StoryBlok",
+        "Storybook",
+        "Feature Hub",
+        "Micro-services",
+        "Webpack",
+      ],
+      screenshots: [
+        {
+          alt: "Volkswagen Configurator",
+          src: "/vw-configurator-153x212.png",
+        },
+        {
+          alt: "Volkswagen Finance Offers",
+          src: "/vw-finance-offers-1-105x212.png",
+        },
+        {
+          alt: "Volkswagen Finance Offers",
+          src: "/vw-finance-offers-2-228x212.png",
+        },
+        {
+          alt: "Volkswagen Retailer Search",
+          src: "/vw-retailer-search-252x212.png",
+        },
+      ],
+      description:
+        "Volkswagen Finance Calculator and Request a Test Drive forms were built using React and TypeScript and configured using Jahia CMS.",
+      link: { text: "www.vw.co.uk", url: "http://www.vw.co.uk" },
+    },
+    {
       id: "seat",
       title: "SEAT Cars UK",
       subtitle: "Automotive web apps",
