@@ -3,7 +3,9 @@ import "./App.css";
 import PortfolioItem from "./components/PortfolioItem";
 
 function App() {
-  const data = {
+  const data = [
+    {
+      id: "seat",
     title: "SEAT Cars UK",
     subtitle: "Automotive web apps",
     tags: [
@@ -27,9 +29,34 @@ function App() {
     description:
       "SEAT Finance Calculator and Request a Test Drive forms were built using React and TypeScript and configured using Jahia CMS.",
     link: { text: "www.seat.co.uk", url: "http://www.seat.co.uk" },
-  };
-
-  const { title, subtitle } = data;
+    },
+    {
+      id: "skoda",
+      title: "Skoda UK",
+      subtitle: "Automotive web apps",
+      tags: [
+        "React",
+        "TypeScript",
+        "Hookstate",
+        "Storybook",
+        "Jahia",
+        "Cypress",
+        "Webpack",
+      ],
+      screenshots: [
+        {
+          alt: "Skoda Book a Service",
+          src: "/skoda-osb-1-191x212.png",
+        },
+        { alt: "Skoda Book a Service", src: "/skoda-osb-2-177x212.png" },
+        { alt: "Skoda Book a Service", src: "/skoda-osb-3-96x212.png" },
+        { alt: "Skoda Book a Service", src: "/skoda-osb-4-104x212.png" },
+      ],
+      description:
+        "Skoda Book a Service forms were built using React and TypeScript and configured using Jahia CMS.",
+      link: { text: "www.skoda.co.uk", url: "http://www.skoda.co.uk" },
+    },
+  ];
 
   const [itemOpen, setItemOpen] = useState<number | null>(null);
 
