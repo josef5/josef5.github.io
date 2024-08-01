@@ -113,6 +113,22 @@ function App() {
         url: "https://www.wrenkitchens.com/us/showrooms/levittown",
       },
     },
+    {
+      id: "simple-pattern",
+      title: "Simple Pattern",
+      subtitle: "iOS app",
+      tags: ["iOS", "Objective-C", "UIKit", "Swift", "Xcode"],
+      screenshots: [
+        { alt: "My Next Tube app", src: "/my-next-tube-1-119x212.png" },
+        { alt: "My Next Tube app", src: "/my-next-tube-2-119x212.png" },
+      ],
+      description:
+        "Simple Pattern was built using React and TypeScript and configured using Redux and Redux-Saga.",
+      link: {
+        text: "www.simplepattern.co.uk",
+        url: "http://www.simplepattern.co.uk",
+      },
+    },
   ];
 
   const [itemOpen, setItemOpen] = useState<string | null>(null);
