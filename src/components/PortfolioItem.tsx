@@ -170,18 +170,18 @@ function PortfolioItem({
           {subtitle}
         </div>
         <div className="accordion-body">
-          <div className="tags flex gap-2">
+          <div className="tags flex flex-wrap gap-2">
             {tags.map((tag) => (
               <Tag text={tag} key={tag} className="animated-element" />
             ))}
           </div>
-          <div className="screenshots my-12 flex min-h-[212px] gap-6">
+          <div className="screenshots my-12 flex min-h-[212px] snap-x snap-mandatory gap-6 overflow-x-scroll">
             {screenshots.map(({ src, alt }) => (
               <img
                 src={src}
                 key={src}
                 alt={alt}
-                className="animated-element shrink-0 overflow-hidden rounded"
+                className="animated-element shrink-0 snap-start snap-always overflow-hidden rounded"
               />
             ))}
           </div>
