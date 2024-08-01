@@ -6,29 +6,29 @@ function App() {
   const data = [
     {
       id: "seat",
-    title: "SEAT Cars UK",
-    subtitle: "Automotive web apps",
-    tags: [
-      "React",
-      "TypeScript",
-      "Hookstate",
-      "Storybook",
-      "Jahia",
-      "Cypress",
-      "Webpack",
-    ],
-    screenshots: [
-      {
-        alt: "SEAT Finance Calculator",
-        src: "/seat-finance-calculator-1-192x212.png",
-      },
-      { alt: "SEAT Test Drive", src: "/seat-testdrive-1-258x212.png" },
-      { alt: "SEAT Test Drive", src: "/seat-testdrive-2-158x212.png" },
-      { alt: "SEAT Test Drive", src: "/seat-testdrive-3-150x212.png" },
-    ],
-    description:
-      "SEAT Finance Calculator and Request a Test Drive forms were built using React and TypeScript and configured using Jahia CMS.",
-    link: { text: "www.seat.co.uk", url: "http://www.seat.co.uk" },
+      title: "SEAT Cars UK",
+      subtitle: "Automotive web apps",
+      tags: [
+        "React",
+        "TypeScript",
+        "Hookstate",
+        "Storybook",
+        "Jahia",
+        "Cypress",
+        "Webpack",
+      ],
+      screenshots: [
+        {
+          alt: "SEAT Finance Calculator",
+          src: "/seat-finance-calculator-1-192x212.png",
+        },
+        { alt: "SEAT Test Drive", src: "/seat-testdrive-1-258x212.png" },
+        { alt: "SEAT Test Drive", src: "/seat-testdrive-2-158x212.png" },
+        { alt: "SEAT Test Drive", src: "/seat-testdrive-3-150x212.png" },
+      ],
+      description:
+        "SEAT Finance Calculator and Request a Test Drive forms were built using React and TypeScript and configured using Jahia CMS.",
+      link: { text: "www.seat.co.uk", url: "http://www.seat.co.uk" },
     },
     {
       id: "skoda",
@@ -66,30 +66,21 @@ function App() {
 
   return (
     <div className="flex flex-col gap-4">
-      <PortfolioItem
-        id={1}
-        title={title}
-        subtitle={subtitle}
-        data={data}
-        isExternalOpen={itemOpen === 1}
-        onOpen={handleOpen}
-      />
-      <PortfolioItem
-        id={2}
-        title={title}
-        subtitle={subtitle}
-        data={data}
-        isExternalOpen={itemOpen === 2}
-        onOpen={handleOpen}
-      />
-      <PortfolioItem
-        id={3}
-        title={title}
-        subtitle={subtitle}
-        data={data}
-        isExternalOpen={itemOpen === 3}
-        onOpen={handleOpen}
-      />
+      {data.map((data) => {
+        const { id, title, subtitle } = data;
+
+        return (
+          <PortfolioItem
+            id={id}
+            key={id}
+            title={title}
+            subtitle={subtitle}
+            data={data}
+            isExternalOpen={itemOpen === id}
+            onOpen={handleOpen}
+          />
+        );
+      })}
     </div>
   );
 }
