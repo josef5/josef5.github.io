@@ -90,6 +90,23 @@
     "link": { "text": "www.skoda.co.uk", "url": "http://www.skoda.co.uk" }
   },
   {
+    "id": "via",
+    "title": "VIA Outlets",
+    "subtitle": "European fashion outlet",
+    "tags": ["Vue", "Nuxt", "StoryBlok", "Styled Components", "Webpack"],
+    "screenshots": [
+      { "alt": "VIA Outlets", "src": "/via-1-196x212.png" },
+      { "alt": "VIA Outlets", "src": "/via-2-163x212.png" },
+      { "alt": "VIA Outlets", "src": "/via-3-120x212.png" },
+      { "alt": "VIA Outlets", "src": "/via-4-150x212.png" }
+    ],
+    "description": "VIA Outlets was built using Vue and configured using StoryBlok.",
+    "link": {
+      "text": "www.viaoutlets.com",
+      "url": "https://www.viaoutlets.com"
+    }
+  },
+  {
     "id": "wren",
     "title": "Wren Kitchens",
     "subtitle": "Kitchen showroom page",
