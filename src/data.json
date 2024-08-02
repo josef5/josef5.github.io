@@ -34,7 +34,7 @@
         "src": "/vw-retailer-search-252x212.png"
       }
     ],
-    "description": "Volkswagen Finance Calculator and Request a Test Drive forms were built using React and TypeScript and configured using Jahia CMS.",
+    "description": "A series of web apps for Tribal’s main client, Volkswagen UK, including Finance Calculator, Book a Service and Request a Test Drive. Built using React and TypeScript and configured using StoryBlok CMS. I played a key role in migrating all VWs web apps to React and implementing the Feature Hub micro-services architecture.",
     "link": { "text": "www.vw.co.uk", "url": "http://www.vw.co.uk" }
   },
   {
@@ -60,7 +60,7 @@
       { "alt": "SEAT Test Drive", "src": "/seat-testdrive-2-158x212.png" },
       { "alt": "SEAT Test Drive", "src": "/seat-testdrive-3-150x212.png" }
     ],
-    "description": "SEAT Finance Calculator and Request a Test Drive forms were built using React and TypeScript and configured using Jahia CMS.",
+    "description": "Web apps for SEAT Cars UK, including Finance Calculator and Request a Test Drive forms. Built using React and TypeScript and configured using Jahia CMS with data from the Volkswagen API. As the sole frontend developer on the account I maintained and extended the two main apps and implemented Cypress e2e tests.",
     "link": { "text": "www.seat.co.uk", "url": "http://www.seat.co.uk" }
   },
   {
@@ -86,7 +86,7 @@
       { "alt": "Skoda Book a Service", "src": "/skoda-osb-3-96x212.png" },
       { "alt": "Skoda Book a Service", "src": "/skoda-osb-4-104x212.png" }
     ],
-    "description": "Skoda Book a Service forms were built using React and TypeScript and configured using Jahia CMS.",
+    "description": "Tribal provided one main app for Skoda UK; the Book a Service form is closely based on the Volkswagen version of the app. Built using React and TypeScript and configured using StoryBlok CMS. As the main frontend developer on the account I maintained the app with a team of backend developers and QA engineers.",
     "link": { "text": "www.skoda.co.uk", "url": "http://www.skoda.co.uk" }
   },
   {
@@ -100,7 +100,7 @@
       { "alt": "VIA Outlets", "src": "/via-3-120x212.png" },
       { "alt": "VIA Outlets", "src": "/via-4-150x212.png" }
     ],
-    "description": "VIA Outlets was built using Vue and configured using StoryBlok.",
+    "description": "VIA Outlets has 11 locations in 9 European countries and its sites are localised into multiple local languages. All content was designed to be editable by the client using StoryBlok headless CMS. I added modules to the Fashion Club user section and contributed extensively to the  maintenance of the all the localised sites.",
     "link": {
       "text": "www.viaoutlets.com",
       "url": "https://www.viaoutlets.com"
@@ -109,14 +109,14 @@
   {
     "id": "wren",
     "title": "Wren Kitchens",
-    "subtitle": "Kitchen showroom page",
+    "subtitle": "Kitchen showrooms",
     "tags": ["HTML", "CSS", "JavaScript"],
     "screenshots": [
       { "alt": "Wren Kitchens", "src": "/wren-levittown-1-202x212.png" },
       { "alt": "Wren Kitchens", "src": "/wren-levittown-2-188x212.png" },
       { "alt": "Wren Kitchens", "src": "/wren-levittown-3-170x212.png" }
     ],
-    "description": "Wren Kitchens was built using React and TypeScript and configured using Redux and Redux-Saga.",
+    "description": "A showcase for Wren Kitchens new showroom in Levittown NY. I single handedly developed the section using vanilla HTML, CSS and JavaScript. ",
     "link": {
       "text": "www.wrenkitchens.com",
       "url": "https://www.wrenkitchens.com/us/showrooms/levittown"
@@ -132,7 +132,7 @@
       { "alt": "My Next Tube app", "src": "/my-next-tube-2-119x212.png" },
       { "alt": "My Next Tube website", "src": "/my-next-tube-3-290x212.png" }
     ],
-    "description": "Simple Pattern was built using React and TypeScript and configured using Redux and Redux-Saga.",
+    "description": "My Next Tube app built in Objective-C. The free iOS app displays arrival times for London Underground tube trains using data from TfL's API. I intitally developed the app in Objective-C before migrating to Swift.",
     "link": {
       "text": "www.simplepattern.co.uk",
       "url": "http://www.simplepattern.co.uk"
