@@ -19,10 +19,11 @@ function App() {
 
   return (
     <>
-      <main className="mb-12 min-h-screen leading-tight">
+      <header className="mt-2 leading-tight">
         <h1 className="font-extrabold">José Espejo</h1>
         <h2>Front End Developer</h2>
-        <h3>Selected Work</h3>
+      </header>
+      <main className="mb-12 leading-tight">
         <div className="my-16">
           <h4 className="mb-2 text-[0.6875rem]">Professional Skills</h4>
           <div className="flex flex-wrap gap-2">
