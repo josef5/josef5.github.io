@@ -63,7 +63,15 @@ function PortfolioItem({
     () => {
       if (isOpen) {
         gsap
-          .timeline()
+          .timeline({
+            onComplete: () => {
+              // Scroll window to top of component
+              window.scrollTo({
+                top: (mainRef.current?.offsetTop ?? 0) - 16,
+                behavior: "smooth",
+              });
+            },
+          })
           .to(`.accordion-content`, {
             height: "auto",
             duration: 0.2,
