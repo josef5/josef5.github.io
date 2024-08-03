@@ -46,6 +46,7 @@ function PortfolioItem({
     () => {
       gsap.set(mainRef.current, {
         paddingTop: "1rem",
+        width: "75%",
       });
 
       gsap.set(".accordion-content", {
@@ -71,6 +72,10 @@ function PortfolioItem({
                 behavior: "smooth",
               });
             },
+          })
+          .to(mainRef.current, {
+            width: "100%",
+            duration: 0.2,
           })
           .to(`.accordion-content`, {
             height: "auto",
@@ -140,6 +145,10 @@ function PortfolioItem({
             },
             "<",
           )
+          .to(mainRef.current, {
+            width: "75%",
+            duration: 0.2,
+          })
           .to(
             mainRef.current,
             {
