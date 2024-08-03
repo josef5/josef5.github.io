@@ -25,16 +25,20 @@ function App() {
       </header>
       <main className="mb-12 leading-tight">
         <div className="my-16">
-          <h4 className="mb-2 text-[0.6875rem]">Professional Skills</h4>
-          <div className="flex flex-wrap gap-2">
+          <h4 className="mb-2 text-[0.625rem] text-gray-500">
+            Technical Skills
+          </h4>
+          <div className="flex w-9/12 flex-wrap gap-2">
             {skills.map((tag) => (
               <Tag key={tag} text={tag} className="animated-element" />
             ))}
           </div>
         </div>
-        <div className="mb-8 flex flex-col gap-4">
+        <h4 className="mb-2 text-[0.625rem] text-gray-500">Selected Work</h4>
+        <div className="flex flex-col gap-4">
           {data.map((item) => {
             const { id, title, subtitle, ...rest } = item;
+
             return (
               <PortfolioItem
                 id={id}
@@ -49,7 +53,7 @@ function App() {
           })}
         </div>
       </main>
-      <footer className="mb-16 text-[0.6875rem] leading-tight text-gray-400">
+      <footer className="mb-16 text-[0.625rem] leading-tight text-gray-400">
         <p>m: 07977 703015 e: joseespejo@yahoo.com</p>
       </footer>
     </>
