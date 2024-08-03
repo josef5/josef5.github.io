@@ -18,36 +18,40 @@ function App() {
   }
 
   return (
-    <main className="min-h-screen leading-tight">
-      <h1 className="font-extrabold">José Espejo</h1>
-      <h2>Front End Developer</h2>
-      <h3>Selected Work</h3>
-      <div className="my-16">
-        <h4 className="mb-2 text-[0.6875rem]">Professional Skills</h4>
-        <div className="flex flex-wrap gap-2">
-          {skills.map((tag) => (
-            <Tag key={tag} text={tag} className="animated-element" />
-          ))}
+    <>
+      <main className="mb-12 min-h-screen leading-tight">
+        <h1 className="font-extrabold">José Espejo</h1>
+        <h2>Front End Developer</h2>
+        <h3>Selected Work</h3>
+        <div className="my-16">
+          <h4 className="mb-2 text-[0.6875rem]">Professional Skills</h4>
+          <div className="flex flex-wrap gap-2">
+            {skills.map((tag) => (
+              <Tag key={tag} text={tag} className="animated-element" />
+            ))}
+          </div>
         </div>
-      </div>
-      <div className="flex flex-col gap-4">
-        {data.map((item) => {
-          const { id, title, subtitle, ...rest } = item;
-
-          return (
-            <PortfolioItem
-              id={id}
-              key={id}
-              title={title}
-              subtitle={subtitle}
-              data={rest}
-              isExternalOpen={itemOpen === id}
-              onOpen={handleOpen}
-            />
-          );
-        })}
-      </div>
-    </main>
+        <div className="mb-8 flex flex-col gap-4">
+          {data.map((item) => {
+            const { id, title, subtitle, ...rest } = item;
+            return (
+              <PortfolioItem
+                id={id}
+                key={id}
+                title={title}
+                subtitle={subtitle}
+                data={rest}
+                isExternalOpen={itemOpen === id}
+                onOpen={handleOpen}
+              />
+            );
+          })}
+        </div>
+      </main>
+      <footer className="mb-16 text-[0.6875rem] leading-tight text-gray-400">
+        <p>m: 07977 703015 e: joseespejo@yahoo.com</p>
+      </footer>
+    </>
   );
 }
 
