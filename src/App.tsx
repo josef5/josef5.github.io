@@ -54,7 +54,11 @@ function App() {
         </div>
       </main>
       <footer className="mb-16 text-[0.625rem] leading-tight text-gray-400">
-        <p>m: 07977 703015 e: joseespejo@yahoo.com</p>
+        <p className="flex gap-4">
+          <span>&copy; 2024 Jose Espejo</span>
+          <span>m: 07977 703015</span>
+          <span>e: joseespejo@yahoo.com</span>
+        </p>
       </footer>
     </>
   );
