@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import "./App.css";
 import PortfolioItem from "./components/PortfolioItem";
 import Tag from "./components/Tag";
@@ -6,6 +6,8 @@ import data from "./data.json";
 
 function App() {
   const [itemOpen, setItemOpen] = useState<string | null>(null);
+  const [highlights, setHighlights] = useState<string[]>([]);
+  const highlightTimeout = useRef<number>(0);
 
   // Collect all unique tags from the data
   const skills = useMemo(
@@ -15,6 +17,20 @@ function App() {
 
   function handleOpen(id: string) {
     setItemOpen(id);
+  }
+
+  function handleTagClick(tag: string) {
+    // Highlight items with the given tag
+    setHighlights(
+      data.filter((item) => item.tags.includes(tag)).map((item) => item.id),
+    );
+
+    // Clear highlights after 2 seconds
+    clearTimeout(highlightTimeout.current);
+
+    highlightTimeout.current = setTimeout(() => {
+      setHighlights([]);
+    }, 2000);
   }
 
   return (
@@ -30,7 +46,9 @@ function App() {
           </h4>
           <div className="flex w-9/12 flex-wrap gap-2">
             {skills.map((tag) => (
-              <Tag key={tag} text={tag} className="animated-element" />
+              <button key={tag} onClick={() => handleTagClick(tag)}>
+                <Tag text={tag} className="animated-element" />
+              </button>
             ))}
           </div>
         </div>
@@ -47,6 +65,7 @@ function App() {
                 subtitle={subtitle}
                 data={rest}
                 isExternalOpen={itemOpen === id}
+                isHighlighted={highlights.includes(id)}
                 onOpen={handleOpen}
               />
             );

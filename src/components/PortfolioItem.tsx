@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
 import CloseIcon from "./CloseIcon";
+import HighlightIcon from "./HighlightIcon";
 import Tag from "./Tag";
 
 function PortfolioItem({
@@ -10,7 +11,9 @@ function PortfolioItem({
   subtitle,
   data,
   isExternalOpen,
+  isHighlighted = false,
   onOpen,
+  className,
 }: {
   id: string;
   title: string;
@@ -22,7 +25,9 @@ function PortfolioItem({
     link: { text: string; url: string };
   };
   isExternalOpen?: boolean;
+  isHighlighted: boolean;
   onOpen: (id: string) => void;
+  className?: string;
 }) {
   const mainRef = useRef<HTMLDivElement>(null);
   const contentContainerRef = useRef<HTMLDivElement>(null);
@@ -165,7 +170,7 @@ function PortfolioItem({
   return (
     <div
       ref={mainRef}
-      className={`relative flex w-9/12 flex-col rounded-2xl bg-[hsl(0,0%,85%)] px-8 pb-4 text-black`}
+      className={`${className} relative flex w-9/12 flex-col rounded-2xl bg-[hsl(0,0%,85%)] px-8 pb-4 text-black`}
     >
       <div
         className="accordion-header flex cursor-pointer items-baseline gap-2"
@@ -177,6 +182,9 @@ function PortfolioItem({
         </h3>
         <CloseIcon
           className={`close-icon absolute right-5 top-5 size-5 fill-gray-600`}
+        />
+        <HighlightIcon
+          className={`highlight-icon absolute right-5 top-5 size-4 fill-cyan-500 transition-opacity duration-300 ${isHighlighted && !isOpen ? "opacity-100" : "opacity-0"}`}
         />
       </div>
       <div
