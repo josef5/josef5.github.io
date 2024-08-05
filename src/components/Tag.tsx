@@ -1,5 +1,3 @@
-import React from "react";
-
 function Tag({ text, className }: { text: string; className?: string }) {
   return (
     <div
