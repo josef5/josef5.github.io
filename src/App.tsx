@@ -34,12 +34,12 @@ function App() {
   }
 
   return (
-    <>
-      <header className="mt-2 leading-tight">
+    <div className="flex h-screen flex-col">
+      <header className="mt-12 leading-tight">
         <h1 className="font-extrabold">José Espejo</h1>
         <h2>Front End Developer</h2>
       </header>
-      <main className="mb-12 leading-tight">
+      <main className="flex-grow leading-tight">
         <div className="my-16">
           <h4 className="mb-2 text-[0.625rem] text-gray-500">
             Technical Skills
@@ -72,14 +72,14 @@ function App() {
           })}
         </div>
       </main>
-      <footer className="mb-16 text-[0.625rem] leading-tight text-gray-400">
+      <footer className="mb-8 text-[0.625rem] leading-tight text-gray-400">
         <p className="flex gap-4">
           <span>&copy; 2024 Jose Espejo</span>
           <span>m: 07977 703015</span>
           <span>e: joseespejo@yahoo.com</span>
         </p>
       </footer>
-    </>
+    </div>
   );
 }
 
