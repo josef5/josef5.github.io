@@ -59,7 +59,7 @@ function PortfolioItem({
         height: 0,
       });
 
-      gsap.set(".animated-element", { opacity: 0 });
+      gsap.set(".animated-pfitem-element", { opacity: 0 });
       gsap.set(".subtitle-1", { opacity: 1 });
       gsap.set(".close-icon", { opacity: 0 });
     },
@@ -114,7 +114,7 @@ function PortfolioItem({
             "<",
           )
           .to(
-            ".animated-element",
+            ".animated-pfitem-element",
             {
               opacity: 1,
               duration: 0.2,
@@ -126,7 +126,7 @@ function PortfolioItem({
       } else {
         gsap
           .timeline()
-          .to(".animated-element", {
+          .to(".animated-pfitem-element", {
             opacity: 0,
             duration: 0.2,
             ease: "power3.out",
@@ -194,13 +194,13 @@ function PortfolioItem({
         className={`accordion-content overflow-hidden text-left text-[12px] leading-5`}
         ref={contentContainerRef}
       >
-        <div className="subtitle-2 animated-element mt-[-0.25rem] h-14 text-gray-600">
+        <div className="subtitle-2 animated-pfitem-element mt-[-0.25rem] h-14 text-gray-600">
           {subtitle}
         </div>
         <div className="accordion-body">
           <div className="tags flex flex-wrap gap-2">
             {tags.map((tag) => (
-              <Tag text={tag} key={tag} className="animated-element" />
+              <Tag text={tag} key={tag} className="animated-pfitem-element" />
             ))}
           </div>
           <div className="screenshots my-12 flex min-h-[212px] snap-x snap-mandatory gap-6 overflow-x-scroll">
@@ -209,14 +209,18 @@ function PortfolioItem({
                 src={src}
                 key={src}
                 alt={alt}
-                className="animated-element shrink-0 snap-start snap-always overflow-hidden rounded"
+                className="animated-pfitem-element shrink-0 snap-start snap-always overflow-hidden rounded"
               />
             ))}
           </div>
-          <p className="animated-element w-6/12 leading-snug text-gray-600">
+          <p className="animated-pfitem-element w-6/12 leading-snug text-gray-600">
             {description}
           </p>
-          <a href={link.url} target="_blank" className="animated-element">
+          <a
+            href={link.url}
+            target="_blank"
+            className="animated-pfitem-element"
+          >
             {link.text}
           </a>
           <div className="h-8"></div>
