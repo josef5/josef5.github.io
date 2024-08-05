@@ -184,7 +184,7 @@ function PortfolioItem({
           className={`close-icon absolute right-5 top-5 size-5 fill-gray-600`}
         />
         <HighlightIcon
-          className={`highlight-icon absolute right-5 top-5 size-4 fill-cyan-500 transition-opacity duration-300 ${isHighlighted && !isOpen ? "opacity-100" : "opacity-0"}`}
+          className={`highlight-icon absolute right-5 top-5 size-4 fill-cyan-600 transition-opacity duration-300 ${isHighlighted && !isOpen ? "opacity-100" : "opacity-0"}`}
         />
       </div>
       <div
