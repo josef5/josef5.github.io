@@ -51,6 +51,7 @@ function PortfolioItem({
     () => {
       gsap.set(mainRef.current, {
         paddingTop: "1rem",
+        paddingLeft: "1.5rem",
         width: "75%",
       });
 
@@ -98,6 +99,7 @@ function PortfolioItem({
             mainRef.current,
             {
               paddingTop: "2rem",
+              paddingLeft: "2rem",
               duration: 0.2,
             },
             "<",
@@ -158,6 +160,7 @@ function PortfolioItem({
             mainRef.current,
             {
               paddingTop: "1rem",
+              paddingLeft: "1.5rem",
               duration: 0.2,
             },
             "<",
