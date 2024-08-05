@@ -40,7 +40,19 @@ function PortfolioItem({
     } else {
       onOpen(id);
       setIsOpen(true);
+
+      trackClick();
     }
+  }
+
+  function trackClick() {
+    // Send statcounter event
+    window._statcounter.push({
+      tags: { event_name: `Click Open: ${title}` },
+    });
+
+    // Record statcounter pageview
+    window._statcounter.record_pageview();
   }
 
   useEffect(() => {
