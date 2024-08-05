@@ -34,12 +34,12 @@ function App() {
   }
 
   return (
-    <div className="flex h-screen flex-col">
+    <>
       <header className="mt-12 leading-tight">
         <h1 className="font-extrabold">José Espejo</h1>
         <h2>Front End Developer</h2>
       </header>
-      <main className="flex-grow leading-tight">
+      <main className="mb-12 flex-grow leading-tight">
         <div className="my-16">
           <h4 className="mb-2 text-[0.625rem] text-gray-500">
             Technical Skills
@@ -79,7 +79,7 @@ function App() {
           <span>e: joseespejo@yahoo.com</span>
         </p>
       </footer>
-    </div>
+    </>
   );
 }
 
