@@ -11,6 +11,7 @@ gsap.registerPlugin(useGSAP);
 function App() {
   const [itemOpen, setItemOpen] = useState<string | null>(null);
   const [highlights, setHighlights] = useState<string[]>([]);
+  const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const highlightTimeout = useRef<number>(0);
   const appRef = useRef<HTMLDivElement>(null);
 
@@ -25,6 +26,8 @@ function App() {
   }
 
   function handleTagClick(tag: string) {
+    setSelectedTag(tag);
+
     // Highlight items with the given tag
     setHighlights(
       data.filter((item) => item.tags.includes(tag)).map((item) => item.id),
@@ -34,6 +37,7 @@ function App() {
     clearTimeout(highlightTimeout.current);
 
     highlightTimeout.current = setTimeout(() => {
+      setSelectedTag(null);
       setHighlights([]);
     }, 2000);
   }
@@ -46,7 +50,7 @@ function App() {
         opacity: 1,
         stagger: 0.05,
         duration: 0.2,
-        delay: 0.5,
+        delay: 0.75,
       });
     },
     { scope: appRef },
@@ -66,7 +70,10 @@ function App() {
           <div className="flex w-9/12 flex-wrap gap-2">
             {skills.map((tag) => (
               <button key={tag} onClick={() => handleTagClick(tag)}>
-                <Tag text={tag} className="animated-hp-element" />
+                <Tag
+                  text={tag}
+                  className={`animated-hp-element ${tag === selectedTag && "bg-cyan-600"}`}
+                />
               </button>
             ))}
           </div>
