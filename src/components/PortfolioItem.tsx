@@ -84,11 +84,12 @@ function PortfolioItem({
         gsap
           .timeline({
             onComplete: () => {
+              // TODO: try gsap plugin for this
               // Scroll window to top of component
-              window.scrollTo({
-                top: (mainRef.current?.offsetTop ?? 0) - 16,
-                behavior: "smooth",
-              });
+              // window.scrollTo({
+              //   top: (mainRef.current?.offsetTop ?? 0) - 16,
+              //   behavior: "smooth",
+              // });
             },
           })
           .to(mainRef.current, {
