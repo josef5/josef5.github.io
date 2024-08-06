@@ -13,7 +13,6 @@ function App() {
   const [highlights, setHighlights] = useState<string[]>([]);
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const highlightTimeout = useRef<number>(0);
-  const appRef = useRef<HTMLDivElement>(null);
 
   // Collect all unique tags from the data
   const skills = useMemo(
@@ -42,8 +41,7 @@ function App() {
     }, 2000);
   }
 
-  useGSAP(
-    () => {
+  useGSAP(() => {
       gsap.set(".animated-hp-element", { opacity: 0 });
 
       gsap.timeline().to(".animated-hp-element", {
@@ -52,9 +50,7 @@ function App() {
         duration: 0.2,
         delay: 0.75,
       });
-    },
-    { scope: appRef },
-  );
+  });
 
   return (
     <div className="App" ref={appRef}>
