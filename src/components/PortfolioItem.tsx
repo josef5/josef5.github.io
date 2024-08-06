@@ -225,7 +225,7 @@ function PortfolioItem({
               />
             ))}
           </div>
-          <p className="animated-pfitem-element w-6/12 leading-snug text-gray-600">
+          <p className="animated-pfitem-element w-8/12 leading-snug text-gray-600">
             {description}
           </p>
           <a
