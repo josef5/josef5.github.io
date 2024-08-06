@@ -42,18 +42,18 @@ function App() {
   }
 
   useGSAP(() => {
-      gsap.set(".animated-hp-element", { opacity: 0 });
+    gsap.set(".animated-hp-element", { opacity: 0 });
 
-      gsap.timeline().to(".animated-hp-element", {
-        opacity: 1,
-        stagger: 0.05,
-        duration: 0.2,
-        delay: 0.75,
-      });
+    gsap.timeline().to(".animated-hp-element", {
+      opacity: 1,
+      stagger: 0.05,
+      duration: 0.2,
+      delay: 0.75,
+    });
   });
 
   return (
-    <div className="App" ref={appRef}>
+    <div className="App flex min-h-screen flex-col">
       <header className="animated-hp-element mt-12 leading-tight">
         <h1 className="font-extrabold">José Espejo</h1>
         <h2>Front End Developer</h2>

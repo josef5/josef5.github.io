@@ -1,8 +1,5 @@
 #root {
   max-width: 1280px;
-  min-height: 100vh;
   margin: 0 auto 0 0;
   padding: 0 2rem;
-  display: flex;
-  flex-direction: column;
 }
