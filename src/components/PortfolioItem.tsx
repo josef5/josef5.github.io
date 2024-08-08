@@ -82,16 +82,7 @@ function PortfolioItem({
     () => {
       if (isOpen) {
         gsap
-          .timeline({
-            onComplete: () => {
-              // TODO: try gsap plugin for this
-              // Scroll window to top of component
-              // window.scrollTo({
-              //   top: (mainRef.current?.offsetTop ?? 0) - 16,
-              //   behavior: "smooth",
-              // });
-            },
-          })
+          .timeline()
           .to(mainRef.current, {
             width: "100%",
             duration: 0.2,
