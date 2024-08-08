@@ -1,12 +1,13 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { useMemo, useRef, useState } from "react";
 import "./App.css";
 import PortfolioItem from "./components/PortfolioItem";
 import Tag from "./components/Tag";
 import data from "./data.json";
 
-gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(useGSAP, ScrollToPlugin);
 
 function App() {
   const [itemOpen, setItemOpen] = useState<string | null>(null);
@@ -42,6 +43,7 @@ function App() {
   }
 
   useGSAP(() => {
+    gsap.set(window, { scrollTo: 0 });
     gsap.set(".animated-hp-element", { opacity: 0 });
 
     gsap.timeline().to(".animated-hp-element", {
