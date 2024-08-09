@@ -103,7 +103,7 @@ function App() {
         <p className="flex gap-4">
           <span>&copy; 2024 Jose Espejo</span>
           <span>m: 07977 703015</span>
-          <span>e: joseespejo@yahoo.com</span>
+          <span>e: jose@joseespejo.info</span>
         </p>
       </footer>
     </div>
