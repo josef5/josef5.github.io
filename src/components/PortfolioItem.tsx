@@ -177,7 +177,7 @@ function PortfolioItem({
   return (
     <div
       ref={mainRef}
-      className={`${className} relative flex w-9/12 flex-col rounded-xl bg-[hsl(0,0%,85%)] px-8 pb-4 text-black`}
+      className={`${className} relative flex w-9/12 flex-col rounded-xl bg-[hsl(0,0%,85%)] px-8 pb-4`}
     >
       <div
         className="accordion-header flex cursor-pointer items-baseline gap-2"
