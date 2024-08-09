@@ -9,6 +9,13 @@ import data from "./data.json";
 
 gsap.registerPlugin(useGSAP, ScrollToPlugin);
 
+// TODO:
+// - Constant-ify colours
+// - Constant-ify magic numbers
+// - Decompose App component into smaller components
+// - Add a dark mode toggle
+// - Add testing
+
 function App() {
   const [itemOpen, setItemOpen] = useState<string | null>(null);
   const [highlights, setHighlights] = useState<string[]>([]);
