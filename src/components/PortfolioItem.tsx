@@ -29,7 +29,7 @@ function PortfolioItem({
   onOpen: (id: string) => void;
   className?: string;
 }) {
-  const mainRef = useRef<HTMLDivElement>(null);
+  const mainDivRef = useRef<HTMLDivElement>(null);
   const contentContainerRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(isExternalOpen);
   const { tags, screenshots, description, link } = data;
@@ -70,7 +70,7 @@ function PortfolioItem({
 
   useGSAP(
     () => {
-      gsap.set(mainRef.current, {
+      gsap.set(mainDivRef.current, {
         paddingTop: LAYOUT.TOP_PADDING_CLOSE,
         paddingLeft: LAYOUT.LEFT_PADDING_CLOSE,
         width: LAYOUT.WIDTH_CLOSE,
@@ -84,7 +84,7 @@ function PortfolioItem({
       gsap.set(".subtitle-1", { opacity: 1 });
       gsap.set(".close-icon", { opacity: 0 });
     },
-    { dependencies: [], scope: mainRef },
+    { dependencies: [], scope: mainDivRef },
   );
 
   useGSAP(
@@ -92,7 +92,7 @@ function PortfolioItem({
       if (isOpen) {
         gsap
           .timeline()
-          .to(mainRef.current, {
+          .to(mainDivRef.current, {
             width: LAYOUT.WIDTH_OPEN,
             duration: 0.2,
           })
@@ -109,7 +109,7 @@ function PortfolioItem({
             "<",
           )
           .to(
-            mainRef.current,
+            mainDivRef.current,
             {
               paddingTop: LAYOUT.TOP_PADDING_OPEN,
               paddingLeft: LAYOUT.LEFT_PADDING_OPEN,
@@ -165,12 +165,12 @@ function PortfolioItem({
             },
             "<",
           )
-          .to(mainRef.current, {
+          .to(mainDivRef.current, {
             width: LAYOUT.WIDTH_CLOSE,
             duration: 0.2,
           })
           .to(
-            mainRef.current,
+            mainDivRef.current,
             {
               paddingTop: LAYOUT.TOP_PADDING_CLOSE,
               paddingLeft: LAYOUT.LEFT_PADDING_CLOSE,
@@ -180,12 +180,12 @@ function PortfolioItem({
           );
       }
     },
-    { dependencies: [isOpen], scope: mainRef },
+    { dependencies: [isOpen], scope: mainDivRef },
   );
 
   return (
     <div
-      ref={mainRef}
+      ref={mainDivRef}
       className={`${className} bg-lightMode-pfItemBgColor text-lightMode-pfItemText dark:bg-darkMode-pfItemBgColor dark:text-darkMode-pfItemText relative flex w-9/12 flex-col rounded-xl px-8 pb-4`}
     >
       <div
