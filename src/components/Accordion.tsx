@@ -1,7 +1,7 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import CloseIcon from "./CloseIcon";
+import CloseIcon from "./icons/CloseIcon";
 
 function Accordion({
   title,

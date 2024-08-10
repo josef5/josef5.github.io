@@ -1,9 +1,8 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
-// TODO: Move icons to subfolder
-import CloseIcon from "./CloseIcon";
-import HighlightIcon from "./HighlightIcon";
+import CloseIcon from "./icons/CloseIcon";
+import HighlightIcon from "./icons/HighlightIcon";
 import Tag from "./Tag";
 
 function PortfolioItem({
