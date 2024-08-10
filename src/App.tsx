@@ -49,10 +49,12 @@ function App() {
   }
 
   useGSAP(() => {
-    gsap.set(window, { scrollTo: 0 });
     gsap.set(".animated-hp-element", { opacity: 0 });
 
-    gsap.timeline().to(".animated-hp-element", {
+    gsap
+      .timeline()
+      .to(window, { scrollTo: 0, duration: 0.05 })
+      .to(".animated-hp-element", {
       opacity: 1,
       stagger: 0.05,
       duration: 0.2,
