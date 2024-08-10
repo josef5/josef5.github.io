@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
 import CloseIcon from "./icons/CloseIcon";
 import HighlightIcon from "./icons/HighlightIcon";
-import Tag from "./Tag";
+import TagList from "./TagList";
 
 function PortfolioItem({
   id,
@@ -207,11 +207,7 @@ function PortfolioItem({
           {subtitle}
         </div>
         <div className="accordion-body">
-          <div className="tags flex flex-wrap gap-2">
-            {tags.map((tag) => (
-              <Tag text={tag} key={tag} className="animated-pfitem-element" />
-            ))}
-          </div>
+          <TagList tags={tags} tagClassName="animated-pfitem-element" />
           <div className="screenshots my-12 flex min-h-[212px] snap-x snap-mandatory gap-6 overflow-x-scroll">
             {screenshots.map(({ src, alt }) => (
               <img

@@ -3,15 +3,16 @@ import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { useEffect, useMemo, useRef, useState } from "react";
 import "./App.css";
-import PortfolioItem from "./components/PortfolioItem";
-import Tag from "./components/Tag";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import PortfolioList from "./components/PortfolioList";
+import TagList from "./components/TagList";
 import data from "./data.json";
 import useLocalStorage from "./hooks/useLocalStorage";
 
 gsap.registerPlugin(useGSAP, ScrollToPlugin);
 
 // TODO:
-// - Decompose App component into smaller components
 // - Add testing
 
 function App() {
@@ -77,59 +78,35 @@ function App() {
 
   return (
     <div className="App flex min-h-screen flex-col">
-      <header className="animated-hp-element text-lightMode-headerText dark:text-darkMode-headerText mt-12 leading-tight">
-        <h1 className="font-extrabold">José Espejo</h1>
-        <h2>Front End Developer</h2>
-      </header>
+      <Header className="animated-hp-element" />
       <main className="mb-12 flex-grow leading-tight">
         <div className="my-16">
           <h4 className="animated-hp-element text-lightMode-subheading dark:text-darkMode-subheading mb-2 text-[0.625rem]">
             Technical Skills
           </h4>
-          <div className="flex w-9/12 flex-wrap gap-2">
-            {skills.map((tag) => (
-              <button key={tag} onClick={() => handleTagClick(tag)}>
-                <Tag
-                  text={tag}
-                  className={`animated-hp-element ${tag === selectedTag && "!bg-lightMode-highlightColor dark:!bg-darkMode-highlightColor"}`}
-                />
-              </button>
-            ))}
-          </div>
+          <TagList
+            selectedTag={selectedTag}
+            tags={skills}
+            onTagClick={handleTagClick}
+            className="w-9/12"
+            tagClassName="animated-hp-element"
+          />
         </div>
         <h4 className="animated-hp-element text-lightMode-subheading dark:text-darkMode-subheading mb-2 text-[0.625rem]">
           Selected Work
         </h4>
-        <div className="flex flex-col gap-4">
-          {data.map((item) => {
-            const { id, title, subtitle, ...rest } = item;
-
-            return (
-              <PortfolioItem
-                id={id}
-                key={id}
-                title={title}
-                subtitle={subtitle}
-                data={rest}
-                isExternalOpen={itemOpen === id}
-                isHighlighted={highlights.includes(id)}
-                onOpen={handleOpen}
-                className="animated-hp-element"
-              />
-            );
-          })}
-        </div>
+        <PortfolioList
+          data={data}
+          itemOpen={itemOpen}
+          highlights={highlights}
+          handleOpen={handleOpen}
+        />
       </main>
-      <footer className="animated-hp-element text-lightMode-footerText dark:text-darkMode-footerText mb-8 text-[0.625rem] leading-tight">
-        <p className="flex gap-4">
-          <span>&copy; 2024 Jose Espejo</span>
-          <span>m: 07977 703015</span>
-          <span>e: jose@joseespejo.info</span>
-          <button onClick={() => handleDarkModeClick()}>
-            dark mode: {isDarkMode ? "on" : "off"}
-          </button>
-        </p>
-      </footer>
+      <Footer
+        isDarkMode={isDarkMode}
+        onDarkModeClick={handleDarkModeClick}
+        className="animated-hp-element"
+      />
     </div>
   );
 }
