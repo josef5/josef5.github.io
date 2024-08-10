@@ -34,6 +34,15 @@ function PortfolioItem({
   const [isOpen, setIsOpen] = useState(isExternalOpen);
   const { tags, screenshots, description, link } = data;
 
+  const LAYOUT = {
+    LEFT_PADDING_OPEN: "2rem",
+    LEFT_PADDING_CLOSE: "1.4rem",
+    TOP_PADDING_OPEN: "2rem",
+    TOP_PADDING_CLOSE: "1rem",
+    WIDTH_OPEN: "100%",
+    WIDTH_CLOSE: "75%",
+  };
+
   function handleClick() {
     if (isOpen) {
       setIsOpen(false);
@@ -62,9 +71,9 @@ function PortfolioItem({
   useGSAP(
     () => {
       gsap.set(mainRef.current, {
-        paddingTop: "1rem",
-        paddingLeft: "1.4rem",
-        width: "75%",
+        paddingTop: LAYOUT.TOP_PADDING_CLOSE,
+        paddingLeft: LAYOUT.LEFT_PADDING_CLOSE,
+        width: LAYOUT.WIDTH_CLOSE,
       });
 
       gsap.set(".accordion-content", {
@@ -84,7 +93,7 @@ function PortfolioItem({
         gsap
           .timeline()
           .to(mainRef.current, {
-            width: "100%",
+            width: LAYOUT.WIDTH_OPEN,
             duration: 0.2,
           })
           .to(`.accordion-content`, {
@@ -102,8 +111,8 @@ function PortfolioItem({
           .to(
             mainRef.current,
             {
-              paddingTop: "2rem",
-              paddingLeft: "2rem",
+              paddingTop: LAYOUT.TOP_PADDING_OPEN,
+              paddingLeft: LAYOUT.LEFT_PADDING_OPEN,
               duration: 0.2,
             },
             "<",
@@ -157,14 +166,14 @@ function PortfolioItem({
             "<",
           )
           .to(mainRef.current, {
-            width: "75%",
+            width: LAYOUT.WIDTH_CLOSE,
             duration: 0.2,
           })
           .to(
             mainRef.current,
             {
-              paddingTop: "1rem",
-              paddingLeft: "1.4rem",
+              paddingTop: LAYOUT.TOP_PADDING_CLOSE,
+              paddingLeft: LAYOUT.LEFT_PADDING_CLOSE,
               duration: 0.2,
             },
             "<",

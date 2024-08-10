@@ -11,7 +11,6 @@ import useLocalStorage from "./hooks/useLocalStorage";
 gsap.registerPlugin(useGSAP, ScrollToPlugin);
 
 // TODO:
-// - Constant-ify magic numbers
 // - Decompose App component into smaller components
 // - Add testing
 
@@ -21,6 +20,7 @@ function App() {
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [isDarkMode, setIsDarkMode] = useLocalStorage("darkMode", false);
   const highlightTimeout = useRef<number>(0);
+  const HIGHLIGHT_TIMEOUT_DURATION = 2000;
 
   // Collect all unique tags from the data
   const skills = useMemo(
@@ -46,7 +46,7 @@ function App() {
     highlightTimeout.current = setTimeout(() => {
       setSelectedTag(null);
       setHighlights([]);
-    }, 2000);
+    }, HIGHLIGHT_TIMEOUT_DURATION);
   }
 
   function handleDarkModeClick() {
