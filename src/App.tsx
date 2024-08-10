@@ -1,7 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import "./App.css";
 import PortfolioItem from "./components/PortfolioItem";
 import Tag from "./components/Tag";
@@ -12,7 +12,6 @@ gsap.registerPlugin(useGSAP, ScrollToPlugin);
 // TODO:
 // - Constant-ify magic numbers
 // - Decompose App component into smaller components
-// - Add a dark mode toggle
 // - Add testing
 
 function App() {
@@ -47,6 +46,18 @@ function App() {
       setHighlights([]);
     }, 2000);
   }
+
+  function handleDarkModeClick() {
+    setIsDarkMode((prev) => !prev);
+  }
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [isDarkMode]);
 
   useGSAP(() => {
     gsap.set(".animated-hp-element", { opacity: 0 });
@@ -112,6 +123,9 @@ function App() {
           <span>&copy; 2024 Jose Espejo</span>
           <span>m: 07977 703015</span>
           <span>e: jose@joseespejo.info</span>
+          <button onClick={() => handleDarkModeClick()}>
+            dark mode: {isDarkMode ? "on" : "off"}
+          </button>
         </p>
       </footer>
     </div>
