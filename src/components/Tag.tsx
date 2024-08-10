@@ -1,7 +1,7 @@
 function Tag({ text, className }: { text: string; className?: string }) {
   return (
     <div
-      className={`${className} rounded-[10px] bg-[hsl(0,0%,35%)] px-3 py-1 text-[0.5625rem] leading-5 text-white transition-colors duration-300`}
+      className={`${className} bg-lightMode-tagBgColor text-lightMode-tagText dark:bg-darkMode-tagBgColor dark:text-darkMode-tagText rounded-[10px] px-3 py-1 text-[0.5625rem] leading-5 transition-colors duration-300`}
     >
       {text}
     </div>

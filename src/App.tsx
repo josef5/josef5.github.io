@@ -10,7 +10,6 @@ import data from "./data.json";
 gsap.registerPlugin(useGSAP, ScrollToPlugin);
 
 // TODO:
-// - Constant-ify colours
 // - Constant-ify magic numbers
 // - Decompose App component into smaller components
 // - Add a dark mode toggle
@@ -63,13 +62,13 @@ function App() {
 
   return (
     <div className="App flex min-h-screen flex-col">
-      <header className="animated-hp-element mt-12 leading-tight">
+      <header className="animated-hp-element text-lightMode-headerText dark:text-darkMode-headerText mt-12 leading-tight">
         <h1 className="font-extrabold">José Espejo</h1>
         <h2>Front End Developer</h2>
       </header>
       <main className="mb-12 flex-grow leading-tight">
         <div className="my-16">
-          <h4 className="animated-hp-element mb-2 text-[0.625rem] text-gray-500">
+          <h4 className="animated-hp-element text-lightMode-subheading dark:text-darkMode-subheading mb-2 text-[0.625rem]">
             Technical Skills
           </h4>
           <div className="flex w-9/12 flex-wrap gap-2">
@@ -77,13 +76,13 @@ function App() {
               <button key={tag} onClick={() => handleTagClick(tag)}>
                 <Tag
                   text={tag}
-                  className={`animated-hp-element ${tag === selectedTag && "bg-cyan-600"}`}
+                  className={`animated-hp-element ${tag === selectedTag && "!bg-lightMode-highlightColor dark:!bg-darkMode-highlightColor"}`}
                 />
               </button>
             ))}
           </div>
         </div>
-        <h4 className="animated-hp-element mb-2 text-[0.625rem] text-gray-500">
+        <h4 className="animated-hp-element text-lightMode-subheading dark:text-darkMode-subheading mb-2 text-[0.625rem]">
           Selected Work
         </h4>
         <div className="flex flex-col gap-4">
@@ -106,7 +105,7 @@ function App() {
           })}
         </div>
       </main>
-      <footer className="animated-hp-element mb-8 text-[0.625rem] leading-tight text-gray-400">
+      <footer className="animated-hp-element text-lightMode-footerText dark:text-darkMode-footerText mb-8 text-[0.625rem] leading-tight">
         <p className="flex gap-4">
           <span>&copy; 2024 Jose Espejo</span>
           <span>m: 07977 703015</span>

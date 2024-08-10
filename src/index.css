@@ -10,8 +10,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: hsl(0, 0%, 10%);
-  background-color: #fff;
+  @apply bg-lightMode-bgColor dark:bg-darkMode-bgColor;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

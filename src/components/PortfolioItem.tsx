@@ -178,28 +178,24 @@ function PortfolioItem({
   return (
     <div
       ref={mainRef}
-      className={`${className} relative flex w-9/12 flex-col rounded-xl bg-[hsl(0,0%,85%)] px-8 pb-4`}
+      className={`${className} bg-lightMode-pfItemBgColor text-lightMode-pfItemText dark:bg-darkMode-pfItemBgColor dark:text-darkMode-pfItemText relative flex w-9/12 flex-col rounded-xl px-8 pb-4`}
     >
       <div
         className="accordion-header flex cursor-pointer items-baseline gap-2"
         onClick={handleClick}
       >
-        <h2 className="text-base font-extrabold text-gray-600">{title}</h2>
-        <h3 className={`subtitle-1 text-xs font-normal text-gray-600`}>
-          {subtitle}
-        </h3>
-        <CloseIcon
-          className={`close-icon absolute right-5 top-5 size-5 fill-gray-600`}
-        />
+        <h2 className="text-base font-extrabold">{title}</h2>
+        <h3 className={`subtitle-1 text-xs font-normal`}>{subtitle}</h3>
+        <CloseIcon className={`close-icon absolute right-5 top-5 size-5`} />
         <HighlightIcon
-          className={`highlight-icon absolute right-5 top-5 size-4 fill-cyan-600 transition-opacity duration-300 ${isHighlighted && !isOpen ? "opacity-100" : "opacity-0"}`}
+          className={`highlight-icon fill-lightMode-highlightColor dark:fill-darkMode-highlightColor absolute right-5 top-5 size-4 transition-opacity duration-300 ${isHighlighted && !isOpen ? "opacity-100" : "opacity-0"}`}
         />
       </div>
       <div
         className={`accordion-content overflow-hidden text-left text-[12px] leading-5`}
         ref={contentContainerRef}
       >
-        <div className="subtitle-2 animated-pfitem-element mt-[-0.25rem] h-14 text-gray-600">
+        <div className="subtitle-2 animated-pfitem-element mt-[-0.25rem] h-14">
           {subtitle}
         </div>
         <div className="accordion-body">
@@ -218,13 +214,13 @@ function PortfolioItem({
               />
             ))}
           </div>
-          <p className="animated-pfitem-element w-8/12 leading-snug text-gray-600">
+          <p className="animated-pfitem-element w-8/12 leading-snug">
             {description}
           </p>
           <a
             href={link.url}
             target="_blank"
-            className="animated-pfitem-element"
+            className="animated-pfitem-element font-bold"
           >
             {link.text}
           </a>
