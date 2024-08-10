@@ -1,5 +1,3 @@
-import React from "react";
-
 function Header({ className }: { className?: string }) {
   return (
     <header
