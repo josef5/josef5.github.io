@@ -6,6 +6,7 @@ import "./App.css";
 import PortfolioItem from "./components/PortfolioItem";
 import Tag from "./components/Tag";
 import data from "./data.json";
+import useLocalStorage from "./hooks/useLocalStorage";
 
 gsap.registerPlugin(useGSAP, ScrollToPlugin);
 
@@ -18,6 +19,7 @@ function App() {
   const [itemOpen, setItemOpen] = useState<string | null>(null);
   const [highlights, setHighlights] = useState<string[]>([]);
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
+  const [isDarkMode, setIsDarkMode] = useLocalStorage("darkMode", false);
   const highlightTimeout = useRef<number>(0);
 
   // Collect all unique tags from the data
@@ -66,11 +68,11 @@ function App() {
       .timeline()
       .to(window, { scrollTo: 0, duration: 0.05 })
       .to(".animated-hp-element", {
-      opacity: 1,
-      stagger: 0.05,
-      duration: 0.2,
-      delay: 0.75,
-    });
+        opacity: 1,
+        stagger: 0.05,
+        duration: 0.2,
+        delay: 0.75,
+      });
   });
 
   return (
