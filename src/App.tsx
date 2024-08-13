@@ -21,7 +21,7 @@ function App() {
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [isDarkMode, setIsDarkMode] = useLocalStorage("darkMode", false);
   const highlightTimeout = useRef<number>(0);
-  const HIGHLIGHT_TIMEOUT_DURATION = 2000;
+  const HIGHLIGHT_TIMEOUT_DURATION: number = 2000;
 
   // Collect all unique tags from the data
   const skills = useMemo(
