@@ -4,8 +4,8 @@ function TagList({
   tags,
   selectedTag,
   onTagClick,
-  className,
-  tagClassName,
+  className = "",
+  tagClassName = "",
 }: {
   tags: string[];
   selectedTag?: string | null;
@@ -19,6 +19,7 @@ function TagList({
         const tagComponent = (
           <Tag
             text={tag}
+            key={tag}
             className={`${tagClassName} ${tag === selectedTag && "!bg-lightMode-highlightColor dark:!bg-darkMode-highlightColor"}`}
           />
         );
@@ -26,10 +27,6 @@ function TagList({
         return onTagClick ? (
           <button key={tag} onClick={() => onTagClick(tag)}>
             {tagComponent}
-            {/* <Tag
-              text={tag}
-              className={`${tagClassName} ${tag === selectedTag && "!bg-lightMode-highlightColor dark:!bg-darkMode-highlightColor"}`}
-            /> */}
           </button>
         ) : (
           <span key={tag}>{tagComponent}</span>

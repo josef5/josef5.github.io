@@ -5,7 +5,7 @@ function PortfolioList({
   itemOpen,
   highlights,
   handleOpen,
-  className,
+  className = "",
 }: {
   data: {
     id: string;

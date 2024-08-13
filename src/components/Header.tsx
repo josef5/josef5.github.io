@@ -1,4 +1,4 @@
-function Header({ className }: { className?: string }) {
+function Header({ className = "" }: { className?: string }) {
   return (
     <header
       className={`${className} text-lightMode-headerText dark:text-darkMode-headerText mt-12 leading-tight`}

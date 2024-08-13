@@ -13,7 +13,7 @@ function PortfolioItem({
   isExternalOpen,
   isHighlighted = false,
   onOpen,
-  className,
+  className = "",
 }: {
   id: string;
   title: string;
@@ -186,7 +186,7 @@ function PortfolioItem({
   return (
     <div
       ref={mainDivRef}
-      className={`${className} bg-lightMode-pfItemBgColor text-lightMode-pfItemText dark:bg-darkMode-pfItemBgColor dark:text-darkMode-pfItemText relative flex w-9/12 flex-col rounded-xl px-8 pb-4`}
+      className={`${className} pf-item bg-lightMode-pfItemBgColor text-lightMode-pfItemText dark:bg-darkMode-pfItemBgColor dark:text-darkMode-pfItemText relative flex w-9/12 flex-col rounded-xl px-8 pb-4`}
     >
       <div
         className="accordion-header flex cursor-pointer items-baseline gap-2"

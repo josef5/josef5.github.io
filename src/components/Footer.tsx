@@ -1,7 +1,7 @@
 function Footer({
   isDarkMode,
   onDarkModeClick,
-  className,
+  className = "",
 }: {
   isDarkMode: boolean;
   onDarkModeClick: () => void;
