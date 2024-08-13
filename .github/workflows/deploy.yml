@@ -20,8 +20,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+      # - name: Install dependencies
+      #   uses: bahmutov/npm-install@v1
 
       - name: Build project
         run: npm run build
