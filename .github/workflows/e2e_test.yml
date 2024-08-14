@@ -13,8 +13,8 @@ jobs:
         with:
           browser: chrome
           # record: true
-          parallel: true
-          group: "UI-Chrome"
+          # parallel: true
+          # group: "UI-Chrome"
           install: false
           build: npm run build
           start: npm start
