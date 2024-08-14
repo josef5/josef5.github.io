@@ -13,6 +13,6 @@ jobs:
         with:
           browser: chrome
           # Prevent use of pnpm
-          install: false
+          # install: false
           build: npm run build
           start: npm start
