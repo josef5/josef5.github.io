@@ -12,39 +12,7 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           browser: chrome
-          # record: true
-          # parallel: true
-          # group: "UI-Chrome"
+          # Prevent use of pnpm
           install: false
           build: npm run build
           start: npm start
-      # - name: Checkout
-      #   uses: actions/checkout@v4
-      # # Install npm dependencies, cache them correctly
-      # # and run all Cypress tests
-      # - name: Install Cypress
-      #   run: npm install cypress
-      # - name: Cypress run
-      #   uses: cypress-io/github-action@v6
-      #   with:
-      #     build: npm run build
-      #     start: npm start
-      #     install: false
-    # steps:
-    #   - name: Checkout
-    #     uses: actions/checkout@v4
-    #   - name: Install Node.js
-    #     uses: actions/setup-node@v2
-    #     with:
-    #       node-version: "20"
-    #   # - run: npm install cypress
-    #   - name: Install dependencies
-    #     run: npm install
-    #   - name: Cypress run
-    #     uses: cypress-io/github-action@v6
-    #     with:
-    #       browser: chrome
-    #       record: true
-    #       parallel: true
-    #       group: "UI-Chrome"
-    #       install: false
