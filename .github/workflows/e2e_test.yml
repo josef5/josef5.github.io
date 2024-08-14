@@ -16,6 +16,8 @@ jobs:
           parallel: true
           group: "UI-Chrome"
           install: false
+          build: npm run build
+          start: npm start
       # - name: Checkout
       #   uses: actions/checkout@v4
       # # Install npm dependencies, cache them correctly
