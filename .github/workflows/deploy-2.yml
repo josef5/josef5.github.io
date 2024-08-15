@@ -14,6 +14,9 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      - name: Create npm lock file
+        run: npm install --package-lock-only
+
       - name: Cache node modules
         id: cache-npm
         uses: actions/cache@v3
@@ -84,7 +87,7 @@ jobs:
 
   deploy:
     name: Deploy
-    needs: build
+    needs: cypress-run
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
 
