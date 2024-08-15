@@ -2,12 +2,12 @@ name: Build, Test and Deploy
 
 on:
   workflow_dispatch:
-  # push:
-  #   branches:
-  #     - main
-  # pull_request:
-  #   branches:
-  #     - main
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
@@ -51,45 +51,13 @@ jobs:
           name: production-files
           path: ./dist
 
-  cypress-run:
-    name: Cypress Run
+  test:
     needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Cache node modules
-        id: cache-npm
-        uses: actions/cache@v4
-        env:
-          cache-name: cache-node-modules
-        with:
-          # npm cache files are stored in `~/.npm` on Linux/macOS
-          path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-
-      - name: Remove pnpm lock file
-        run: rm -f pnpm-lock.yaml
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
-        with:
-          browser: chrome
-          build: npm run build
-          start: npm start
+    uses: ./.github/workflows/cypress-tests.yml
 
   deploy:
     name: Deploy
-    needs: cypress-run
+    needs: test
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
 
