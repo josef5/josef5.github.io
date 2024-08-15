@@ -14,6 +14,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      # Needed when locally using pnpm
       - name: Create npm lock file
         run: npm install --package-lock-only
 
@@ -36,12 +37,12 @@ jobs:
         with:
           node-version: "20"
           # This ensures npm is used even if pnpm is present
-          cache: "npm"
+          # cache: "npm"
 
       - name: Install dependencies
         # Optionally, if you want to ignore the pnpm-lock.yaml file
-        # run: rm -f pnpm-lock.yaml && npm install
-        run: npm install
+        run: rm -f pnpm-lock.yaml && npm install
+        # run: npm install
 
       - name: Build project
         run: npm run build
