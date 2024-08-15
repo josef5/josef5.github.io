@@ -10,6 +10,7 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -41,8 +42,8 @@ jobs:
 
       - name: Install dependencies
         # Optionally, if you want to ignore the pnpm-lock.yaml file
-        run: rm -f pnpm-lock.yaml && npm install
-        # run: npm install
+        # run: rm -f pnpm-lock.yaml && npm install
+        run: npm install
 
       - name: Build project
         run: npm run build
@@ -57,9 +58,11 @@ jobs:
     name: Cypress Run
     needs: build
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Cache node modules
         id: cache-npm
         uses: actions/cache@v3
@@ -73,16 +76,17 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
+
+      - name: Remove pnpm lock file
+        run: rm -f pnpm-lock.yaml
+
       - name: Install dependencies
-        run: rm -f pnpm-lock.yaml && npm install
-      # - name: Install Cypress
-      #   run: npm install cypress
+        run: npm install
+
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          # browser: chrome
-          # Prevent use of pnpm
-          # install: false
+          browser: chrome
           build: npm run build
           start: npm start
 
