@@ -1,10 +1,13 @@
-name: Deploy 2
+name: Build, Test and Deploy
 
 on:
-  workflow_dispatch
-  # push:
-  #   branches:
-  #     - main
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
@@ -15,7 +18,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      # Needed when locally using pnpm
+      # npm lock file may not be present if using pnpm locally
       - name: Create npm lock file
         run: npm install --package-lock-only
 
@@ -35,14 +38,8 @@ jobs:
 
       - name: Setup node
         uses: actions/setup-node@v4
-        # with:
-        #   node-version: "20"
-        # This ensures npm is used even if pnpm is present
-        # cache: "npm"
 
       - name: Install dependencies
-        # Optionally, if you want to ignore the pnpm-lock.yaml file
-        # run: rm -f pnpm-lock.yaml && npm install
         run: npm install
 
       - name: Build project
