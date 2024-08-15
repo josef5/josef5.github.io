@@ -74,7 +74,7 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
       - name: Install dependencies
-        run: npm install
+        run: rm -f pnpm-lock.yaml && npm install
       # - name: Install Cypress
       #   run: npm install cypress
       - name: Cypress run
