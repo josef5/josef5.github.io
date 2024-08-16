@@ -12,9 +12,6 @@ import useLocalStorage from "./hooks/useLocalStorage";
 
 gsap.registerPlugin(useGSAP, ScrollToPlugin);
 
-// TODO:
-// - Add testing
-
 function App() {
   const [itemOpen, setItemOpen] = useState<string | null>(null);
   const [highlights, setHighlights] = useState<string[]>([]);
@@ -80,10 +77,10 @@ function App() {
     <div className="App flex min-h-screen flex-col">
       <Header className="animated-hp-element" />
       <main className="mb-12 flex-grow leading-tight">
-        <div className="my-16">
-          <h4 className="animated-hp-element text-lightMode-subheading dark:text-darkMode-subheading mb-2 text-[0.625rem]">
+        <div className="my-16" role="group">
+          <h3 className="animated-hp-element mb-2 text-[0.625rem] text-lightMode-subheading dark:text-darkMode-subheading">
             Technical Skills
-          </h4>
+          </h3>
           <TagList
             selectedTag={selectedTag}
             tags={skills}
@@ -92,9 +89,9 @@ function App() {
             tagClassName="animated-hp-element"
           />
         </div>
-        <h4 className="animated-hp-element text-lightMode-subheading dark:text-darkMode-subheading mb-2 text-[0.625rem]">
+        <h3 className="animated-hp-element mb-2 text-[0.625rem] text-lightMode-subheading dark:text-darkMode-subheading">
           Selected Work
-        </h4>
+        </h3>
         <PortfolioList
           data={data}
           itemOpen={itemOpen}
