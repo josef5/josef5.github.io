@@ -186,29 +186,40 @@ function PortfolioItem({
   return (
     <div
       ref={mainDivRef}
-      className={`${className} pf-item bg-lightMode-pfItemBgColor text-lightMode-pfItemText dark:bg-darkMode-pfItemBgColor dark:text-darkMode-pfItemText relative flex w-9/12 flex-col rounded-xl px-8 pb-4`}
+      id={`pf-item-${id}`}
+      className={`${className} pf-item relative flex w-9/12 flex-col rounded-xl bg-lightMode-pfItemBgColor px-8 pb-4 text-lightMode-pfItemText dark:bg-darkMode-pfItemBgColor dark:text-darkMode-pfItemText`}
     >
-      <div
+      <button
         className="accordion-header flex cursor-pointer items-baseline gap-2"
         onClick={handleClick}
+        aria-expanded={isOpen}
+        aria-controls={`pf-item-${id}`}
       >
         <h2 className="text-base font-extrabold">{title}</h2>
         <h3 className={`subtitle-1 text-xs font-normal`}>{subtitle}</h3>
         <CloseIcon className={`close-icon absolute right-5 top-5 size-5`} />
         <HighlightIcon
-          className={`highlight-icon fill-lightMode-highlightColor dark:fill-darkMode-highlightColor absolute right-5 top-5 size-4 transition-opacity duration-300 ${isHighlighted && !isOpen ? "opacity-100" : "opacity-0"}`}
+          className={`highlight-icon absolute right-5 top-5 size-4 fill-lightMode-highlightColor transition-opacity duration-300 dark:fill-darkMode-highlightColor ${isHighlighted && !isOpen ? "opacity-100" : "opacity-0"}`}
         />
-      </div>
+      </button>
       <div
         className={`accordion-content overflow-hidden text-left text-[12px] leading-5`}
         ref={contentContainerRef}
+        role="region"
+        aria-labelledby={`pf-item-${id}`}
       >
         <div className="subtitle-2 animated-pfitem-element mt-[-0.25rem] h-14">
           {subtitle}
         </div>
         <div className="accordion-body">
           <TagList tags={tags} tagClassName="animated-pfitem-element" />
-          <div className="screenshots my-12 flex min-h-[212px] snap-x snap-mandatory gap-6 overflow-x-scroll">
+          <div
+            className={`screenshots my-12 flex min-h-[212px] snap-x snap-mandatory gap-6 overflow-x-scroll`}
+            role="button"
+            aria-label={`Screenshots for ${title}`}
+            tabIndex={isOpen ? 0 : -1}
+            aria-disabled={!isOpen}
+          >
             {screenshots.map(({ src, alt }) => (
               <img
                 src={src}
@@ -225,6 +236,8 @@ function PortfolioItem({
             href={link.url}
             target="_blank"
             className="animated-pfitem-element font-bold"
+            tabIndex={isOpen ? 0 : -1}
+            aria-disabled={!isOpen}
           >
             {link.text}
           </a>
