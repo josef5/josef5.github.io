@@ -150,5 +150,29 @@
       "text": "recipe-box-blush.vercel.app",
       "url": "https://recipe-box-blush.vercel.app"
     }
+  },
+  {
+    "id": "quizify",
+    "title": "Quizify",
+    "subtitle": "AI powered quiz generator",
+    "tags": [
+      "OpenAI SDK",
+      "React",
+      "TypeScript",
+      "Tailwind",
+      "GSAP",
+      "Cypress",
+      "Vite"
+    ],
+    "screenshots": [
+      { "alt": "Quizify", "src": "/quizify-1-158x212.png" },
+      { "alt": "Quizify", "src": "/quizify-2-211x212.png" },
+      { "alt": "Quizify", "src": "/quizify-3-135x212.png" }
+    ],
+    "description": "Quizify is a full-stack AI-powered quiz platform built with the OpenAI SDK, TypeScript, Tailwind CSS, and GSAP. Users can generate quizzes on virtually any topic, organise their quiz library, and complete interactive quizzes through a polished, responsive interface. The application combines AI-powered content generation with secure authentication, persistent storage, and smooth animations to create an engaging learning experience.",
+    "link": {
+      "text": "joseespejo.info/quizify",
+      "url": "http://joseespejo.info/quizify"
+    }
   }
 ]
