@@ -125,19 +125,30 @@
     }
   },
   {
-    "id": "wren",
-    "title": "Wren Kitchens",
-    "subtitle": "Kitchen showrooms",
-    "tags": ["HTML", "CSS", "JavaScript"],
-    "screenshots": [
-      { "alt": "Wren Kitchens", "src": "/wren-levittown-1-202x212.png" },
-      { "alt": "Wren Kitchens", "src": "/wren-levittown-2-188x212.png" },
-      { "alt": "Wren Kitchens", "src": "/wren-levittown-3-170x212.png" }
+    "id": "recipe-box",
+    "title": "Recipe Box",
+    "subtitle": "Fullstack Next.js Application",
+    "tags": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind",
+      "React Hook Form",
+      "Zod",
+      "Drizzle",
+      "Vitest"
     ],
-    "description": "Created a promotional microsite for Wren Kitchens’ new Levittown, New York showroom using vanilla HTML, CSS, and JavaScript. Responsible for the complete frontend implementation, delivering a responsive experience aligned with Wren’s brand guidelines and launch objectives.",
+    "screenshots": [
+      { "alt": "Recipe Box", "src": "/recipe-box-1-200x212.png" },
+      { "alt": "Recipe Box", "src": "/recipe-box-2-151x212.png" },
+      { "alt": "Recipe Box", "src": "/recipe-box-3-75x212.png" },
+      { "alt": "Recipe Box", "src": "/recipe-box-4-204x212.png" }
+    ],
+    "screenshotsNeedBorder": "lightMode",
+    "description": "Recipe Box is a full-stack recipe management application built with Next.js, TypeScript, Tailwind CSS, and Drizzle ORM. It enables users to create, organise, and share recipes through a clean interface backed by secure authentication and database persistence. Built using the Next.js App Router, the application combines server-rendered pages, modern React patterns, and a scalable architecture to deliver a fast, responsive user experience.",
     "link": {
-      "text": "www.wrenkitchens.com",
-      "url": "https://www.wrenkitchens.com/us/showrooms/levittown"
+      "text": "recipe-box-blush.vercel.app",
+      "url": "https://recipe-box-blush.vercel.app"
     }
   }
 ]
