@@ -13,6 +13,7 @@ function PortfolioList({
     subtitle?: string;
     tags: string[];
     screenshots: { alt: string; src: string }[];
+    screenshotsNeedBorder?: string;
     description: string;
     link: { text: string; url: string };
   }[];

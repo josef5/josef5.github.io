@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import CloseIcon from "./icons/CloseIcon";
 import HighlightIcon from "./icons/HighlightIcon";
 import TagList from "./TagList";
+import { useDarkMode } from "../hooks/useDarkMode";
 
 function PortfolioItem({
   id,
@@ -21,6 +22,7 @@ function PortfolioItem({
   data: {
     tags: string[];
     screenshots: { alt: string; src: string }[];
+    screenshotsNeedBorder?: string;
     description: string;
     link: { text: string; url: string };
   };
@@ -32,7 +34,18 @@ function PortfolioItem({
   const mainDivRef = useRef<HTMLDivElement>(null);
   const contentContainerRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(isExternalOpen);
-  const { tags, screenshots, description, link } = data;
+  const { tags, screenshots, screenshotsNeedBorder, description, link } = data;
+  const isDarkMode = useDarkMode();
+  const isBorderNeeded =
+    (screenshotsNeedBorder === "lightMode" ||
+      screenshotsNeedBorder === "both") &&
+    !isDarkMode
+      ? true
+      : (screenshotsNeedBorder === "darkMode" ||
+            screenshotsNeedBorder === "both") &&
+          isDarkMode
+        ? true
+        : false;
 
   const LAYOUT = {
     LEFT_PADDING_OPEN: "2rem",
@@ -225,7 +238,7 @@ function PortfolioItem({
                 src={src}
                 key={src}
                 alt={alt}
-                className="animated-pfitem-element shrink-0 snap-start snap-always overflow-hidden rounded"
+                className={`animated-pfitem-element border-lightMode-pfImageBorderColor dark:border-darkMode-pfImageBorderColor shrink-0 snap-start snap-always overflow-hidden rounded object-cover ${isBorderNeeded ? "border" : ""}`}
               />
             ))}
           </div>
