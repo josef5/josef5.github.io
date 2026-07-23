@@ -11,7 +11,7 @@
       { "alt": "My Next Tube 2 appstore", "src": "/mynt2-4-218x212.png" },
       { "alt": "My Next Tube 2 website", "src": "/mynt2-5-335x212.png" }
     ],
-    "description": "My Next Tube 2 is a React Native mobile app that provides real-time London Underground journey information using the Transport for London API. The app helps users quickly check station statuses, line disruptions, and service updates through a clean, intuitive mobile interface. Built from the ground up, it represents a full product development cycle including UX design, native mobile development, API integration, and App Store deployment. The project demonstrates my ability to take an idea from concept to a polished, production-ready application.",
+    "description": "My Next Tube 2 is a React Native mobile app providing real-time London Underground journey information using the Transport for London API. Designed and developed from the ground up, the app covers the full product lifecycle, from UX design and mobile development through to API integration and App Store deployment.",
     "link": {
       "text": "www.simplepattern.co.uk",
       "url": "http://www.simplepattern.co.uk"
@@ -52,7 +52,7 @@
         "src": "/vw-retailer-search-252x212.png"
       }
     ],
-    "description": "A suite of customer-facing web applications for Volkswagen UK, including Finance Calculator, Book a Service and Request a Test Drive. Built with React and TypeScript, with content managed through Storyblok CMS. Played a key role in migrating Volkswagen's frontend applications from Polymer to React and implementing the Feature Hub micro-frontend architecture, helping modernise the platform and improve maintainability.",
+    "description": "A suite of customer-facing web applications for Volkswagen UK, including Finance Calculator, Book a Service and Request a Test Drive. Played a key role in migrating Volkswagen's frontend applications from Polymer to React and implementing the Feature Hub micro-frontend architecture. Built using React and TypeScript with content managed through Storyblok CMS, helping modernise the platform and improve long-term maintainability.",
     "link": { "text": "www.vw.co.uk", "url": "http://www.vw.co.uk" }
   },
   {
@@ -78,7 +78,7 @@
       { "alt": "SEAT Test Drive", "src": "/seat-testdrive-2-158x212.png" },
       { "alt": "SEAT Test Drive", "src": "/seat-testdrive-3-150x212.png" }
     ],
-    "description": "A series of web applications for SEAT UK, including the Finance Calculator and Request a Test Drive. Built with React and TypeScript, configured through Jahia CMS, and integrated with Volkswagen APIs. As the lead frontend developer on the account, I maintained and extended both applications while introducing Cypress end-to-end testing to improve quality and deployment confidence.",
+    "description": "A series of customer-facing applications for SEAT UK, including Finance Calculator and Request a Test Drive. Developed using React and TypeScript, with content managed through Jahia CMS and data integrated from Volkswagen APIs. As lead frontend developer, maintained and extended the applications while introducing Cypress end-to-end testing to improve confidence in releases.",
     "link": { "text": "www.seat.co.uk", "url": "http://www.seat.co.uk" }
   },
   {
@@ -104,7 +104,7 @@
       { "alt": "Skoda Book a Service", "src": "/skoda-osb-3-96x212.png" },
       { "alt": "Skoda Book a Service", "src": "/skoda-osb-4-104x212.png" }
     ],
-    "description": "Maintained and enhanced the Škoda UK Book a Service application, built with React and TypeScript and configured through Storyblok CMS. Working as the lead frontend developer alongside backend engineers and QA specialists, I delivered new features, resolved defects, and ensured the application remained reliable and aligned with evolving business requirements.",
+    "description": "Lead frontend developer for the Škoda UK Book a Service application, working alongside backend engineers and QA specialists to deliver new features and ongoing improvements. Built with React and TypeScript and integrated with Storyblok CMS, the application supported customer service journeys while remaining aligned with evolving business requirements.",
     "link": { "text": "www.skoda.co.uk", "url": "http://www.skoda.co.uk" }
   },
   {
@@ -118,7 +118,7 @@
       { "alt": "VIA Outlets", "src": "/via-3-120x212.png" },
       { "alt": "VIA Outlets", "src": "/via-4-150x212.png" }
     ],
-    "description": "Maintained and enhanced the VIA Outlets web platform, supporting 11 outlet destinations across 9 European countries. Developed new features for the Fashion Club member area and built reusable React components integrated with Storyblok CMS, enabling content editors to manage multilingual sites independently. Contributed to the ongoing maintenance and improvement of multiple localised websites.",
+    "description": "Maintained and enhanced the VIA Outlets web platform, supporting 11 outlet destinations across 9 European countries. Developed features for the Fashion Club member area and created reusable React components integrated with Storyblok CMS, enabling local teams to manage multilingual content independently. Contributed to the ongoing evolution of a large-scale, localised digital platform.",
     "link": {
       "text": "www.viaoutlets.com",
       "url": "https://www.viaoutlets.com"
@@ -134,7 +134,7 @@
       { "alt": "Wren Kitchens", "src": "/wren-levittown-2-188x212.png" },
       { "alt": "Wren Kitchens", "src": "/wren-levittown-3-170x212.png" }
     ],
-    "description": "Created a promotional microsite for Wren Kitchens’ new Levittown, New York showroom using vanilla HTML, CSS, and JavaScript. Responsible for the full frontend implementation, delivering a responsive and engaging experience to support the showroom launch. The project involved close collaboration with the marketing team to ensure the microsite aligned with brand guidelines and effectively showcased the new showroom.",
+    "description": "Created a promotional microsite for Wren Kitchens’ new Levittown, New York showroom using vanilla HTML, CSS, and JavaScript. Responsible for the complete frontend implementation, delivering a responsive experience aligned with Wren’s brand guidelines and launch objectives.",
     "link": {
       "text": "www.wrenkitchens.com",
       "url": "https://www.wrenkitchens.com/us/showrooms/levittown"
