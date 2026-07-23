@@ -1,5 +1,23 @@
 [
   {
+    "id": "mynt2",
+    "title": "My Next Tube 2",
+    "subtitle": "React Native app",
+    "tags": ["React Native", "TypeScript", "Figma", "Expo", "Zustand"],
+    "screenshots": [
+      { "alt": "My Next Tube 2 app", "src": "/mynt2-1-101x212.png" },
+      { "alt": "My Next Tube 2 app", "src": "/mynt2-2-104x212.png" },
+      { "alt": "My Next Tube 2 app", "src": "/mynt2-3-104x212.png" },
+      { "alt": "My Next Tube 2 appstore", "src": "/mynt2-4-218x212.png" },
+      { "alt": "My Next Tube 2 website", "src": "/mynt2-5-335x212.png" }
+    ],
+    "description": "My Next Tube 2 is a React Native mobile app that provides real-time London Underground journey information using the Transport for London API. The app helps users quickly check station statuses, line disruptions, and service updates through a clean, intuitive mobile interface. Built from the ground up, it represents a full product development cycle including UX design, native mobile development, API integration, and App Store deployment. The project demonstrates my ability to take an idea from concept to a polished, production-ready application.",
+    "link": {
+      "text": "www.simplepattern.co.uk",
+      "url": "http://www.simplepattern.co.uk"
+    }
+  },
+  {
     "id": "vw",
     "title": "Volkswagen UK",
     "subtitle": "Automotive web apps",
@@ -34,7 +52,7 @@
         "src": "/vw-retailer-search-252x212.png"
       }
     ],
-    "description": "A series of web apps for Tribal’s main client, Volkswagen UK, including Finance Calculator, Book a Service and Request a Test Drive. Built using React and TypeScript and configured using StoryBlok CMS. I played a key role in migrating all VWs web apps to React and implementing the Feature Hub micro-services architecture.",
+    "description": "A suite of customer-facing web applications for Volkswagen UK, including Finance Calculator, Book a Service and Request a Test Drive. Built with React and TypeScript, with content managed through Storyblok CMS. Played a key role in migrating Volkswagen's frontend applications from Polymer to React and implementing the Feature Hub micro-frontend architecture, helping modernise the platform and improve maintainability.",
     "link": { "text": "www.vw.co.uk", "url": "http://www.vw.co.uk" }
   },
   {
@@ -60,7 +78,7 @@
       { "alt": "SEAT Test Drive", "src": "/seat-testdrive-2-158x212.png" },
       { "alt": "SEAT Test Drive", "src": "/seat-testdrive-3-150x212.png" }
     ],
-    "description": "Web apps for SEAT Cars UK, including Finance Calculator and Request a Test Drive forms. Built using React and TypeScript and configured using Jahia CMS with data from the Volkswagen API. As the sole frontend developer on the account I maintained and extended the two main apps and implemented Cypress e2e tests.",
+    "description": "A series of web applications for SEAT UK, including the Finance Calculator and Request a Test Drive. Built with React and TypeScript, configured through Jahia CMS, and integrated with Volkswagen APIs. As the lead frontend developer on the account, I maintained and extended both applications while introducing Cypress end-to-end testing to improve quality and deployment confidence.",
     "link": { "text": "www.seat.co.uk", "url": "http://www.seat.co.uk" }
   },
   {
@@ -86,7 +104,7 @@
       { "alt": "Skoda Book a Service", "src": "/skoda-osb-3-96x212.png" },
       { "alt": "Skoda Book a Service", "src": "/skoda-osb-4-104x212.png" }
     ],
-    "description": "Tribal provided one main app for Skoda UK; the Book a Service form is closely based on the Volkswagen version of the app. Built using React and TypeScript and configured using StoryBlok CMS. As the main frontend developer on the account I maintained the app with a team of backend developers and QA engineers.",
+    "description": "Maintained and enhanced the Škoda UK Book a Service application, built with React and TypeScript and configured through Storyblok CMS. Working as the lead frontend developer alongside backend engineers and QA specialists, I delivered new features, resolved defects, and ensured the application remained reliable and aligned with evolving business requirements.",
     "link": { "text": "www.skoda.co.uk", "url": "http://www.skoda.co.uk" }
   },
   {
@@ -100,7 +118,7 @@
       { "alt": "VIA Outlets", "src": "/via-3-120x212.png" },
       { "alt": "VIA Outlets", "src": "/via-4-150x212.png" }
     ],
-    "description": "VIA Outlets has 11 locations in 9 European countries and its sites are localised into multiple local languages. All content was designed to be editable by the client using StoryBlok headless CMS. I regularly added modules to the Fashion Club user section and contributed extensively to the  maintenance of the all the localised sites.",
+    "description": "Maintained and enhanced the VIA Outlets web platform, supporting 11 outlet destinations across 9 European countries. Developed new features for the Fashion Club member area and built reusable React components integrated with Storyblok CMS, enabling content editors to manage multilingual sites independently. Contributed to the ongoing maintenance and improvement of multiple localised websites.",
     "link": {
       "text": "www.viaoutlets.com",
       "url": "https://www.viaoutlets.com"
@@ -116,26 +134,10 @@
       { "alt": "Wren Kitchens", "src": "/wren-levittown-2-188x212.png" },
       { "alt": "Wren Kitchens", "src": "/wren-levittown-3-170x212.png" }
     ],
-    "description": "A showcase for Wren Kitchens new showroom in Levittown NY. I single handedly developed the section using vanilla HTML, CSS and JavaScript. ",
+    "description": "Created a promotional microsite for Wren Kitchens’ new Levittown, New York showroom using vanilla HTML, CSS, and JavaScript. Responsible for the full frontend implementation, delivering a responsive and engaging experience to support the showroom launch. The project involved close collaboration with the marketing team to ensure the microsite aligned with brand guidelines and effectively showcased the new showroom.",
     "link": {
       "text": "www.wrenkitchens.com",
       "url": "https://www.wrenkitchens.com/us/showrooms/levittown"
-    }
-  },
-  {
-    "id": "simple-pattern",
-    "title": "Simple Pattern",
-    "subtitle": "iOS app",
-    "tags": ["iOS", "Objective-C", "UIKit", "Swift", "Xcode"],
-    "screenshots": [
-      { "alt": "My Next Tube app", "src": "/my-next-tube-1-119x212.png" },
-      { "alt": "My Next Tube app", "src": "/my-next-tube-2-119x212.png" },
-      { "alt": "My Next Tube website", "src": "/my-next-tube-3-290x212.png" }
-    ],
-    "description": "My Next Tube app built in Objective-C. The free iOS app displays arrival times for London Underground tube trains using data from TfL's API. I intitally developed the app in Objective-C before migrating to Swift.",
-    "link": {
-      "text": "www.simplepattern.co.uk",
-      "url": "http://www.simplepattern.co.uk"
     }
   }
 ]
