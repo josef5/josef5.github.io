@@ -127,7 +127,7 @@
   {
     "id": "recipe-box",
     "title": "Recipe Box",
-    "subtitle": "Fullstack Next.js Application",
+    "subtitle": "Fullstack Next.js application",
     "tags": [
       "Next.js",
       "React",
@@ -160,7 +160,9 @@
       "React",
       "TypeScript",
       "React Hook Form",
+      "Zod",
       "Tailwind",
+      "Shadcn",
       "Storybook",
       "GSAP",
       "Vitest",
