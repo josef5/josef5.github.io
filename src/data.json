@@ -3,7 +3,7 @@
     "id": "mynt2",
     "title": "My Next Tube 2",
     "subtitle": "React Native app",
-    "tags": ["React Native", "TypeScript", "Figma", "Expo", "Zustand"],
+    "tags": ["React Native", "TypeScript", "Figma", "Expo", "Zustand", "Jest"],
     "screenshots": [
       { "alt": "My Next Tube 2 app", "src": "/mynt2-1-101x212.png" },
       { "alt": "My Next Tube 2 app", "src": "/mynt2-2-104x212.png" },
@@ -159,9 +159,11 @@
       "OpenAI SDK",
       "React",
       "TypeScript",
+      "React Hook Form",
       "Tailwind",
+      "Storybook",
       "GSAP",
-      "Cypress",
+      "Vitest",
       "Vite"
     ],
     "screenshots": [
